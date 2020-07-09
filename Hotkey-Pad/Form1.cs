@@ -16,7 +16,7 @@ namespace hotkey_pad
         {
             InitializeComponent();
 
-            pad buttonPad = new pad(tabPageVR);
+            Pad buttonPad = new Pad(tabPageVR);
 
 
 
