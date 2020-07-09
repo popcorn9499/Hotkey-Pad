@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace hotkey_pad
 {
-    public class pad
+    public class Pad
     {
 
         public int buttonXPadding;
@@ -17,8 +17,9 @@ namespace hotkey_pad
         public int colButtonNum;
         public int buttonWidth;
         public int buttonHeight;
+        private TabPage tabPage;
 
-        public pad(TabPage tabPageVR)
+        public Pad(TabPage tabPage)
         {
             this.buttonXPadding = 20;
             this.buttonYPadding = 10;
@@ -26,8 +27,15 @@ namespace hotkey_pad
             this.rowButtonNum = 5;
             this.colButtonNum = 5;
 
-            this.buttonWidth = (tabPageVR.Width - buttonXPadding * rowButtonNum) / rowButtonNum;
-            this.buttonHeight = (tabPageVR.Height - buttonYPadding * colButtonNum) / colButtonNum;
+            this.buttonWidth = (tabPage.Width - buttonXPadding * rowButtonNum) / rowButtonNum;
+            this.buttonHeight = (tabPage.Height - buttonYPadding * colButtonNum) / colButtonNum;
+
+            this.tabPage = tabPage;
+            this.regenButtons();
+        }
+
+        public void regenButtons()
+        {
             for (int rowNum = 0; rowNum < rowButtonNum; rowNum++)
             {
                 for (int colNum = 0; colNum < colButtonNum; colNum++)
@@ -43,7 +51,7 @@ namespace hotkey_pad
                     testButton.Text = "I am Dynamic Button";
                     testButton.Name = "DynamicButton";
                     //testButton.Font = new Font("Georgia", 16);
-                    tabPageVR.Controls.Add(testButton);
+                    this.tabPage.Controls.Add(testButton);
                 }
             }
         }
