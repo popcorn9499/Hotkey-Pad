@@ -66,8 +66,10 @@ namespace Hotkey_Pad_WPF
             double newWindowWidth = e.NewSize.Width;
             double prevWindowHeight = e.PreviousSize.Height;
             double prevWindowWidth = e.PreviousSize.Width;
-            tabControl1.Height = newWindowHeight ;
-            tabControl1.Width = newWindowWidth;
+            if (prevWindowHeight == 0) prevWindowHeight = 450.0;
+            if (prevWindowWidth == 0) prevWindowWidth = 800.0;
+            tabControl1.Height = newWindowHeight*(tabControl1.Height/prevWindowHeight);
+            tabControl1.Width = newWindowWidth*(tabControl1.Width/prevWindowWidth);
         }
         
     }
