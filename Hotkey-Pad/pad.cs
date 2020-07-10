@@ -12,8 +12,7 @@ namespace Hotkey_Pad
     public class Pad
     {
 
-        public int buttonXPadding;
-        public int buttonYPadding;
+        public int buttonPadding;
         public int rowButtonNum;
         public int colButtonNum;
         public int buttonWidth;
@@ -24,13 +23,13 @@ namespace Hotkey_Pad
 
         public Pad(TabItem tabPage)
         {
-            this.buttonXPadding = 20;
-            this.buttonYPadding = 10;
+            this.buttonPadding = 4;
+
 
             this.rowButtonNum = 5;
             this.colButtonNum = 5;
-            this.buttonWidth = (int)((tabPage.Width - buttonXPadding * rowButtonNum) / rowButtonNum);
-            this.buttonHeight = (int)((tabPage.Height - buttonYPadding * colButtonNum) / colButtonNum);
+            //this.buttonWidth = (int)((tabPage.Width - buttonXPadding * rowButtonNum) / rowButtonNum);
+            //this.buttonHeight = (int)((tabPage.Height - buttonYPadding * colButtonNum) / colButtonNum);
 
             this.tabPage = tabPage;
             if ((tabPage.Content.GetType()) == typeof(Grid))
@@ -66,7 +65,7 @@ namespace Hotkey_Pad
                     Button MyControl1 = new Button();
                     MyControl1.Content = "BUTTON";
                     MyControl1.Name = "Button";
-                    MyControl1.Margin = new Thickness(2);
+                    MyControl1.Margin = new Thickness(9);
                     MyControl1.Cursor = Cursors.Arrow;
                     //MyControl1.Width = 90;
                     Grid.SetColumn(MyControl1, colNum);
