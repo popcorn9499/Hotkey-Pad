@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -41,6 +41,9 @@ namespace Hotkey_Pad
 
         public void regenButtons(Grid grid)
         {
+            grid.Children.Clear();
+            grid.RowDefinitions.Clear();
+            grid.ColumnDefinitions.Clear();
 
             for (int i = 0; i < rowButtonNum; i++)
             {
