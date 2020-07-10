@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Hotkey_Pad.Properties;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -73,6 +74,7 @@ namespace Hotkey_Pad
                     MyControl1.Name = "Button";
                     MyControl1.Margin = new Thickness(this.buttonPadding);
                     MyControl1.Cursor = Cursors.Arrow;
+                    MyControl1.Click += Button_Click;
                     //MyControl1.Width = 90;
                     Grid.SetColumn(MyControl1, colNum);
                     Grid.SetRow(MyControl1, rowNum);
@@ -93,6 +95,14 @@ namespace Hotkey_Pad
 
 
             }
+
+
+        }
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("HI");
+            ButtonPadEditor x = new ButtonPadEditor();
+            x.Show();
         }
 
 
