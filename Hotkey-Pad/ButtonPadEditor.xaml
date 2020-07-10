@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Hotkey_Pad"
         mc:Ignorable="d"
-        Title="ButtonPadEditor" Height="499.464" Width="661.26">
+        Title="ButtonPadEditor" Height="264.209" Width="574.397">
     <Grid>
-        <TextBox HorizontalAlignment="Left" Height="179" Margin="50,54,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="377" PreviewKeyDown="TextBox_PreviewKeyDown"/>
+        <TextBox HorizontalAlignment="Left" Height="41" Margin="50,54,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="352" PreviewKeyDown="TextBox_PreviewKeyDown"/>
 
     </Grid>
 </Window>
