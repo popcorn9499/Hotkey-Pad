@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" Background="#FF1001A6" MouseDoubleClick="window1_MouseDoubleClick" SizeChanged="window1_SizeChanged" Margin="0">
     <Grid>
-        <TabControl x:Name="tabControl1" HorizontalAlignment="Left" Height="409" VerticalAlignment="Top" Width="782" Background="{x:Null}">
+        <TabControl x:Name="tabControl1" HorizontalAlignment="Left" Height="409" VerticalAlignment="Top" Width="782" Background="{x:Null}" SelectionChanged="tabControl1_SelectionChanged">
             <TabItem x:Name="tabItemPad" Header="Pad" Background="#FF210FD4" BorderBrush="#FF210FD4">
                 <Grid HorizontalAlignment="Left" Height="387" VerticalAlignment="Top" Width="784" Cursor="None" Margin="0,2,0,0"/>
             </TabItem>
@@ -19,15 +19,15 @@
                     <Label Content="Number of Button Rows: " HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
                     <Label Content="Nuber of Button Columns: " HorizontalAlignment="Left" Margin="10,51,0,0" VerticalAlignment="Top"/>
                     <Label Content="Button Padding:" HorizontalAlignment="Left" Margin="10,93,0,0" VerticalAlignment="Top"/>
-                    <TextBox HorizontalAlignment="Left" Height="23" Margin="162,14,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                    <TextBox HorizontalAlignment="Left" Height="23" Margin="162,54,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                    <TextBox HorizontalAlignment="Left" Height="23" Margin="162,97,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                    <ListView HorizontalAlignment="Left" Height="238" Margin="415,10,0,0" VerticalAlignment="Top" Width="351" SelectionChanged="ListView_SelectionChanged">
+                    <TextBox x:Name="tb_rowButtonNum" HorizontalAlignment="Left" Height="23" Margin="162,14,0,0" TextWrapping="Wrap" Text="5" VerticalAlignment="Top" Width="120" TextChanged="tb_rowButtonNum_TextChanged"/>
+                    <TextBox x:Name="tb_colButtonNum" HorizontalAlignment="Left" Height="23" Margin="162,54,0,0" TextWrapping="Wrap" Text="5" VerticalAlignment="Top" Width="120" TextChanged="tb_colButtonNum_TextChanged"/>
+                    <TextBox x:Name="tb_buttonPadding" HorizontalAlignment="Left" Height="23" Margin="162,97,0,0" TextWrapping="Wrap" Text="4" VerticalAlignment="Top" Width="120" TextChanged="tb_buttonPadding_TextChanged"/>
+                    <ListView HorizontalAlignment="Left" Height="238" Margin="415,10,0,0" VerticalAlignment="Top" Width="351">
                         <ListView.View>
                             <GridView>
-                                <GridViewColumn Header="Hostname" DisplayMemberBinding="{Binding Hostname}"/>
-                                <GridViewColumn Header="Port" DisplayMemberBinding="{Binding Port}"/>
-                                <GridViewColumn Header="Connection Status" DisplayMemberBinding="{Binding Connection_Status}"/>
+                                <GridViewColumn Header="Hostname" DisplayMemberBinding="{Binding Hostname}" Width="100"/>
+                                <GridViewColumn Header="Port" DisplayMemberBinding="{Binding Port}" Width="80"/>
+                                <GridViewColumn Header="Connection Status" DisplayMemberBinding="{Binding Connection_Status}" Width="150"/>
                             </GridView>
                         </ListView.View>
                     </ListView>

@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,44 +19,47 @@ namespace Hotkey_Pad
         public int buttonHeight;
         public List<List<ButtonWrapper>> buttonList = new List<List<ButtonWrapper>>();
         private TabItem tabPage;
+        private Grid grid;
 
 
-        public Pad(TabItem tabPage)
+        public Pad(TabItem tabPage, int buttonPadding, int rowButtonNum, int colButtonNum)
         {
-            this.buttonPadding = 4;
+            this.buttonPadding = buttonPadding;
 
 
-            this.rowButtonNum = 5;
-            this.colButtonNum = 5;
+            this.rowButtonNum = rowButtonNum;
+            this.colButtonNum = colButtonNum;
+
+            this.grid = (Grid)(tabPage.Content);
             //this.buttonWidth = (int)((tabPage.Width - buttonXPadding * rowButtonNum) / rowButtonNum);
             //this.buttonHeight = (int)((tabPage.Height - buttonYPadding * colButtonNum) / colButtonNum);
 
             this.tabPage = tabPage;
             if ((tabPage.Content.GetType()) == typeof(Grid))
             {
-                this.regenButtons((Grid)(tabPage.Content));
+                this.regenButtons();
             }
             
         }
 
-        public void regenButtons(Grid grid)
+        public void regenButtons()
         {
-            grid.Children.Clear();
-            grid.RowDefinitions.Clear();
-            grid.ColumnDefinitions.Clear();
+            this.grid.Children.Clear();
+            this.grid.RowDefinitions.Clear();
+            this.grid.ColumnDefinitions.Clear();
 
             for (int i = 0; i < rowButtonNum; i++)
             {
                 RowDefinition c1 = new RowDefinition();
                 c1.Height = new GridLength(20, GridUnitType.Star);
-                grid.RowDefinitions.Add(c1);
+                this.grid.RowDefinitions.Add(c1);
             }
 
             for (int i = 0; i < colButtonNum; i++)
             {
                 ColumnDefinition c1 = new ColumnDefinition();
                 c1.Width = new GridLength(20, GridUnitType.Star);
-                grid.ColumnDefinitions.Add(c1);
+                this.grid.ColumnDefinitions.Add(c1);
             }
 
             for (int rowNum = 0; rowNum < rowButtonNum; rowNum++)
