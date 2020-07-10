@@ -85,7 +85,7 @@ namespace Hotkey_Pad_WPF
         }
 
         private void tb_colButtonNum_TextChanged(object sender, TextChangedEventArgs e)
-        {
+        { //saves the setting change and adds it to the pad
 
             int colButtonNum;
             TextBox tb = (TextBox)sender;
@@ -105,7 +105,7 @@ namespace Hotkey_Pad_WPF
         }
 
         private void tb_buttonPadding_TextChanged(object sender, TextChangedEventArgs e)
-        {
+        { //saves the setting change and adds it to the pad
             int buttonPadding;
   
             TextBox tb = (TextBox)sender;
@@ -127,12 +127,13 @@ namespace Hotkey_Pad_WPF
 
         private void tabControl1_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            //redraws stuff needing redrawing on tab change
             pad.regenButtons();
             padEditor.regenButtons();
         }
 
         private void tb_rowButtonNum_TextChanged(object sender, TextChangedEventArgs e)
-        {
+        { //saves the setting change and adds it to the pad
             int rowButtonNum;
             TextBox tb = (TextBox)sender;
             if (int.TryParse(tb.Text, out rowButtonNum))
