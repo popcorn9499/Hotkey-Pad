@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-
+using System.Windows.Input;
 
 namespace Hotkey_Pad
 {
@@ -67,6 +67,7 @@ namespace Hotkey_Pad
                     MyControl1.Content = "BUTTON";
                     MyControl1.Name = "Button";
                     MyControl1.Margin = new Thickness(2);
+                    MyControl1.Cursor = Cursors.Arrow;
                     //MyControl1.Width = 90;
                     Grid.SetColumn(MyControl1, colNum);
                     Grid.SetRow(MyControl1, rowNum);
