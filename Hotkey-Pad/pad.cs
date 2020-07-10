@@ -68,12 +68,12 @@ namespace Hotkey_Pad
                     Button MyControl1 = new Button();
                     MyControl1.Content = "BUTTON";
                     MyControl1.Name = "Button";
-                    MyControl1.Margin = new Thickness(9);
+                    MyControl1.Margin = new Thickness(this.buttonPadding);
                     MyControl1.Cursor = Cursors.Arrow;
                     //MyControl1.Width = 90;
                     Grid.SetColumn(MyControl1, colNum);
                     Grid.SetRow(MyControl1, rowNum);
-                    grid.Children.Add(MyControl1);
+                    this.grid.Children.Add(MyControl1);
 
                 }
 
