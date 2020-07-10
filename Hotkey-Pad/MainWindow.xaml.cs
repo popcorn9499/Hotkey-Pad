@@ -28,25 +28,20 @@ namespace Hotkey_Pad_WPF
             
             foreach (TabItem tabItem in tabControl1.Items)
             {
-                if (tabItem.Header.ToString().Contains("Pad")){
+                if (tabItem.Header.ToString().Equals("Pad")){
                     /* MessageBox.Show(tabItem.Content.ToString());
                      MessageBox.Show(((tabItem.Content.GetType()) == typeof(Grid)).ToString());*/
-                    //Pad x = new Pad(tabItem);
+                    Pad x = new Pad(tabItem);
+                } else if (tabItem.Header.ToString().Equals("Pad Editor"))
+                {
+                    /* MessageBox.Show(tabItem.Content.ToString());
+                     MessageBox.Show(((tabItem.Content.GetType()) == typeof(Grid)).ToString());*/
+                    Pad x = new Pad(tabItem);
                 }
-                
 
-             }
-               /* for (int i = 0; i < 20; i++) {
-                    Button x = new Button();
-                    x.Content = "1231";
-                    x.Width = 50;
-                    x.Height = 50;
-                    x.Margin = new Thickness(150*i, 150*i, 150+150*i, 0);
-                    x.Click += btnClick;
-                    t.Children.Add(x);
-                }
-                tabItem.Content = t;
-*/
+
+            }
+
                 
             } 
         
