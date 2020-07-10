@@ -1,20 +1,30 @@
-﻿<Window x:Name="window1" x:Class="Hotkey_Pad_WPF.MainWindow"
+<Window x:Name="window1" x:Class="Hotkey_Pad_WPF.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Hotkey_Pad_WPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" Background="#FF1001A6" MouseDoubleClick="window1_MouseDoubleClick" SizeChanged="window1_SizeChanged">
+        Title="MainWindow" Height="450" Width="800" Background="#FF1001A6" MouseDoubleClick="window1_MouseDoubleClick" SizeChanged="window1_SizeChanged" Margin="0">
     <Grid>
-        <TabControl x:Name="tabControl1" HorizontalAlignment="Left" Height="419" VerticalAlignment="Top" Width="792" Background="{x:Null}">
+        <TabControl x:Name="tabControl1" HorizontalAlignment="Left" Height="409" VerticalAlignment="Top" Width="782" Background="{x:Null}">
             <TabItem x:Name="tabItemPad" Header="Pad" Background="#FF210FD4" BorderBrush="#FF210FD4">
                 <Grid HorizontalAlignment="Left" Height="387" VerticalAlignment="Top" Width="784" Cursor="None" Margin="0,2,0,0"/>
             </TabItem>
             <TabItem x:Name="tabItemPadEditor" Header="Pad Editor" Background="#FF210FD4" Height="22" VerticalAlignment="Top">
                 <Grid HorizontalAlignment="Left" Height="387" VerticalAlignment="Top" Width="784" Cursor="None" Margin="0,2,0,0"/>
             </TabItem>
-            <TabItem x:Name="tabItemSettings" Header="Settings" Background="#FF210FD4" Height="22" VerticalAlignment="Top" RenderTransformOrigin="1.199,1.568" Margin="-1,0,-45,0"/>
+            <TabItem x:Name="tabItemSettings" Header="Settings" Background="#FF210FD4" Height="22" VerticalAlignment="Top" RenderTransformOrigin="1.199,1.568" Margin="-1,0,-45,0">
+                <Grid HorizontalAlignment="Left" Height="382" Margin="0,0,0,-3" VerticalAlignment="Top" Width="775" Background="White">
+                    <Label Content="Number of Button Rows: " HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Nuber of Button Columns: " HorizontalAlignment="Left" Margin="10,51,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Button Padding:" HorizontalAlignment="Left" Margin="299,10,0,0" VerticalAlignment="Top"/>
+                    <TextBox HorizontalAlignment="Left" Height="23" Margin="162,14,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                    <TextBox HorizontalAlignment="Left" Height="23" Margin="162,54,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                    <TextBox HorizontalAlignment="Left" Height="23" Margin="399,13,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                    <TextBox HorizontalAlignment="Left" Height="23" Margin="491,153,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                </Grid>
+            </TabItem>
         </TabControl>
 
     </Grid>
