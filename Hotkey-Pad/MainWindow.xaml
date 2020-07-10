@@ -15,14 +15,34 @@
                 <Grid HorizontalAlignment="Left" Height="387" VerticalAlignment="Top" Width="784" Cursor="None" Margin="0,2,0,0"/>
             </TabItem>
             <TabItem x:Name="tabItemSettings" Header="Settings" Background="#FF210FD4" Height="22" VerticalAlignment="Top" RenderTransformOrigin="1.199,1.568" Margin="-1,0,-45,0">
-                <Grid HorizontalAlignment="Left" Height="382" Margin="0,0,0,-3" VerticalAlignment="Top" Width="775" Background="White">
+                <Grid HorizontalAlignment="Left" Height="382" Margin="0,0,0,-3" VerticalAlignment="Top" Width="776" Background="White">
                     <Label Content="Number of Button Rows: " HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
                     <Label Content="Nuber of Button Columns: " HorizontalAlignment="Left" Margin="10,51,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Button Padding:" HorizontalAlignment="Left" Margin="299,10,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Button Padding:" HorizontalAlignment="Left" Margin="10,93,0,0" VerticalAlignment="Top"/>
                     <TextBox HorizontalAlignment="Left" Height="23" Margin="162,14,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
                     <TextBox HorizontalAlignment="Left" Height="23" Margin="162,54,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                    <TextBox HorizontalAlignment="Left" Height="23" Margin="399,13,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                    <TextBox HorizontalAlignment="Left" Height="23" Margin="491,153,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                    <TextBox HorizontalAlignment="Left" Height="23" Margin="162,97,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                    <ListView HorizontalAlignment="Left" Height="238" Margin="415,10,0,0" VerticalAlignment="Top" Width="351" SelectionChanged="ListView_SelectionChanged">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Hostname" DisplayMemberBinding="{Binding Hostname}"/>
+                                <GridViewColumn Header="Port" DisplayMemberBinding="{Binding Port}"/>
+                                <GridViewColumn Header="Connection Status" DisplayMemberBinding="{Binding Connection_Status}"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                    <GroupBox Header="New Connection Settings&#xD;&#xA;&#xD;&#xA;" HorizontalAlignment="Left" Height="126" Margin="566,246,0,0" VerticalAlignment="Top" Width="200">
+                        <Grid HorizontalAlignment="Left" Height="101" Margin="0,-28,-2,-2" VerticalAlignment="Top" Width="190">
+                            <Label Content="IP: " HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                            <Label Content="Port:" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top"/>
+                            <TextBox x:Name="btnAddConnectionPorn" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="10000" VerticalAlignment="Top" Width="120" Margin="49,45,0,0"/>
+                            <TextBox x:Name="btnAddConnectionIP" HorizontalAlignment="Left" Height="23" Margin="49,14,0,0" TextWrapping="Wrap" Text="127.0.0.1" VerticalAlignment="Top" Width="120"/>
+                            <Button x:Name="btnAddConnection" Content="Add Connection" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="49,73,0,0" RenderTransformOrigin="8.315,6.388"/>
+                        </Grid>
+                    </GroupBox>
+                    <Button x:Name="btnRemoveCheckedConnections" HorizontalAlignment="Left" VerticalAlignment="Top" Width="109" Margin="436,279,0,0" Height="61">
+                        <TextBlock TextWrapping="Wrap">Remove Checked Connections</TextBlock>
+                    </Button>
                 </Grid>
             </TabItem>
         </TabControl>
