@@ -26,11 +26,11 @@ namespace hotkey_pad
             this.thisButton.Name = name;
             this.thisButton.Font = new Font(font, fontSize);
             this.thisButton.BackColor = Color.Transparent;
-            this.thisButton.ForeColor = Color.Black ;
+            this.thisButton.ForeColor = Color.Black;
 
-            
         }
 
+        
 
     }
 }

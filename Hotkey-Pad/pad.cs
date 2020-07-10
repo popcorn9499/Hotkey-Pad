@@ -46,8 +46,6 @@ namespace hotkey_pad
                     
                     int pointX = (buttonXPadding / 2) + (buttonWidth * rowNum) + buttonXPadding * rowNum;
                     int pointY = (buttonYPadding / 2) + (buttonHeight * colNum) + buttonYPadding * colNum;
-                    
-                    //testButton.Font = new Font("Georgia", 16);
                     ButtonWrapper buttonTemp = new ButtonWrapper(pointX,pointY,buttonHeight,buttonWidth,"TEST");
                     this.tabPage.Controls.Add(buttonTemp.thisButton);
                     buttonList[rowNum].Add(buttonTemp);
