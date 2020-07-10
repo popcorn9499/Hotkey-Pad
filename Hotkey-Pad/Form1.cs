@@ -18,9 +18,6 @@ namespace hotkey_pad
 
             Pad buttonPad = new Pad(tabPageVR);
 
-
-
-
         }
     }
 }

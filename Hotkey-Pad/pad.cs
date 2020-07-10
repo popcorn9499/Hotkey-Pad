@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -45,11 +46,7 @@ namespace hotkey_pad
                     
                     int pointX = (buttonXPadding / 2) + (buttonWidth * rowNum) + buttonXPadding * rowNum;
                     int pointY = (buttonYPadding / 2) + (buttonHeight * colNum) + buttonYPadding * colNum;
-                    // Set background and foreground
-                    //testButton.BackColor = Color.Red;
-                    //testButton.ForeColor = Color.Blue;
-
-
+                    
                     //testButton.Font = new Font("Georgia", 16);
                     ButtonWrapper buttonTemp = new ButtonWrapper(pointX,pointY,buttonHeight,buttonWidth,"TEST");
                     this.tabPage.Controls.Add(buttonTemp.thisButton);
