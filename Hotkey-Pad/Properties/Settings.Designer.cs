@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace hotkey_pad.Properties
+namespace Hotkey_Pad.Properties
 {
 
 
