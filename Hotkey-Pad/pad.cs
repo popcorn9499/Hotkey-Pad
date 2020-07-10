@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Drawing;
 using System.Windows.Forms;
 
 namespace hotkey_pad
@@ -17,7 +16,9 @@ namespace hotkey_pad
         public int colButtonNum;
         public int buttonWidth;
         public int buttonHeight;
+        public List<List<ButtonWrapper>> buttonList = new List<List<ButtonWrapper>>();
         private TabPage tabPage;
+        
 
         public Pad(TabPage tabPage)
         {
@@ -38,21 +39,23 @@ namespace hotkey_pad
         {
             for (int rowNum = 0; rowNum < rowButtonNum; rowNum++)
             {
+                buttonList.Add(new List<ButtonWrapper>());
                 for (int colNum = 0; colNum < colButtonNum; colNum++)
                 {
-                    Button testButton = new Button();
-                    testButton.Location = new Point((buttonXPadding / 2) + (buttonWidth * rowNum) + buttonXPadding * rowNum, (buttonYPadding / 2) + (buttonHeight * colNum) + buttonYPadding * colNum);
-                    testButton.Height = buttonHeight;
-                    testButton.Width = buttonWidth;
+                    
+                    int pointX = (buttonXPadding / 2) + (buttonWidth * rowNum) + buttonXPadding * rowNum;
+                    int pointY = (buttonYPadding / 2) + (buttonHeight * colNum) + buttonYPadding * colNum;
                     // Set background and foreground
                     //testButton.BackColor = Color.Red;
                     //testButton.ForeColor = Color.Blue;
 
-                    testButton.Text = "I am Dynamic Button";
-                    testButton.Name = "DynamicButton";
+
                     //testButton.Font = new Font("Georgia", 16);
-                    this.tabPage.Controls.Add(testButton);
+                    ButtonWrapper buttonTemp = new ButtonWrapper(pointX,pointY,buttonHeight,buttonWidth,"TEST");
+                    this.tabPage.Controls.Add(buttonTemp.thisButton);
+                    buttonList[rowNum].Add(buttonTemp);
                 }
+
             }
         }
 
