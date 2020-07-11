@@ -66,8 +66,9 @@ namespace Hotkey_Pad
                 
                 for (int colNum = 0; colNum < colButtonNum; colNum++)
                 {
+                    ButtonData dataItem = Pad.buttonDataList[rowNum][colNum];
                     Button MyControl1 = new Button();
-                    MyControl1.Content = "BUTTON";
+                    MyControl1.Content = dataItem.BtnText;
                     MyControl1.Name = "Button";
                     MyControl1.Margin = new Thickness(this.buttonPadding);
                     MyControl1.Cursor = Cursors.Arrow;
