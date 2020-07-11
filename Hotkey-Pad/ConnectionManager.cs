@@ -18,6 +18,20 @@ namespace Hotkey_Pad
         private const string CONNECTED = "Connected!";
         private bool closeConnection = false;
 
+        public static List<ConnectionManager> Connection_List = new List<ConnectionManager>();
+
+        public static ConnectionManager findConnection(lvServerListItem lvItem)
+        {
+            foreach (ConnectionManager item in Connection_List)
+            {
+                if (item.lvItem == lvItem)
+                {
+                    return item;
+                }
+            }
+            return null;
+        }
+
         public ConnectionManager(String ip, int port, lvServerListItem lvItem)
         {
             this.ip = ip;
@@ -53,7 +67,6 @@ namespace Hotkey_Pad
                     //gets the stream reader and writer
                     reader = new StreamReader(netstream);
                     writer = new StreamWriter(netstream);
-
 
                     //sets details for the connection
                     writer.AutoFlush = true;

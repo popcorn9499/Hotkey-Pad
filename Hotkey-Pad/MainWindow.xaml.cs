@@ -25,6 +25,7 @@ namespace Hotkey_Pad_WPF
     {
         public Pad padEditor, pad;
 
+        
 
         public MainWindow()
         {
@@ -145,11 +146,9 @@ namespace Hotkey_Pad_WPF
 
             lvServerListItem lvItem = new lvServerListItem { IP_Address = ipAddress, Port = port.ToString(), Connection_Status = "WHY" };
             lvServerList.Items.Add(lvItem);
-            lvItem.Connection_Status = "AA";
 
+            ConnectionManager.Connection_List.Add(new ConnectionManager(ipAddress, port, lvItem));
         }
-
-        
 
         private void btnRemoveCheckedConnections_Click(object sender, RoutedEventArgs e)
         { //removes items selected in the server list.
@@ -157,6 +156,8 @@ namespace Hotkey_Pad_WPF
             foreach (var eachItem in selected)
             {
                 lvServerList.Items.Remove(eachItem);
+                ConnectionManager deadConnection = ConnectionManager.findConnection((lvServerListItem)eachItem);
+                deadConnection.close();
             }
         }
 
