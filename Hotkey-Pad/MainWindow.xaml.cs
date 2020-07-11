@@ -2,6 +2,8 @@
 using Hotkey_Pad.Properties;
 using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
+using System.IO.Pipes;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
@@ -34,11 +36,30 @@ namespace Hotkey_Pad_WPF
             int rowButtonNum = Settings.Default.rowButtonNum;
             int colButtonNum = Settings.Default.colButtonNum;
 
+          
+
             InitializeComponent();
             tb_buttonPadding.Text = buttonPadding.ToString();
             tb_rowButtonNum.Text = rowButtonNum.ToString();
             tb_colButtonNum.Text = colButtonNum.ToString();
 
+
+            if (Settings.Default.connectData == null)
+            {
+                Settings.Default.connectData = new StringCollection();
+            }
+
+            try
+            {
+                foreach (String item in Settings.Default.connectData)
+                {
+                    String ipAddress = item.Split(':')[0]; //gets the hostname and port from the config
+                    Int32 port = Int32.Parse(item.Split(':')[1]);
+
+                    addConnection(ipAddress, port);
+                }
+            }
+            catch { }
 
             foreach (TabItem tabItem in tabControl1.Items)
             {
@@ -144,6 +165,11 @@ namespace Hotkey_Pad_WPF
                 return;
             }
 
+            addConnection(ipAddress, port);
+        }
+
+        private void addConnection(string ipAddress, Int32 port)
+        {
             lvServerListItem lvItem = new lvServerListItem { IP_Address = ipAddress, Port = port.ToString(), Connection_Status = "WHY" };
             lvServerList.Items.Add(lvItem);
 
@@ -159,6 +185,27 @@ namespace Hotkey_Pad_WPF
                 ConnectionManager deadConnection = ConnectionManager.findConnection((lvServerListItem)eachItem);
                 deadConnection.close();
             }
+        }
+
+        private void window1_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            StringCollection servers = new StringCollection();
+            foreach (ConnectionManager item in ConnectionManager.Connection_List)
+            {
+                lvServerListItem lvItem = item.lvItem;
+                String ipAddress = lvItem.IP_Address; //gathers all the item information and creates a serverName
+                String port = lvItem.Port;
+
+                String serverName = ipAddress + ":" + port;
+                servers.Add(serverName); //adds the connection info to the config
+            }
+            Settings.Default.connectData = servers;
+            Settings.Default.Save();
+        }
+
+        private void window1_Loaded(object sender, RoutedEventArgs e)
+        {
+
         }
 
         private void tb_rowButtonNum_TextChanged(object sender, TextChangedEventArgs e)

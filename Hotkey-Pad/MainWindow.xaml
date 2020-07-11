@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Hotkey_Pad_WPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" Background="#FF1001A6" MouseDoubleClick="window1_MouseDoubleClick" SizeChanged="window1_SizeChanged" Margin="0">
+        Title="MainWindow" Height="450" Width="800" Background="#FF1001A6" MouseDoubleClick="window1_MouseDoubleClick" SizeChanged="window1_SizeChanged" Margin="0" Closing="window1_Closing" Loaded="window1_Loaded">
     <Grid>
         <TabControl x:Name="tabControl1" HorizontalAlignment="Left" Height="409" VerticalAlignment="Top" Width="782" Background="{x:Null}" SelectionChanged="tabControl1_SelectionChanged">
             <TabItem x:Name="tabItemPad" Header="Pad" Background="#FF210FD4" BorderBrush="#FF210FD4">
