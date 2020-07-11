@@ -142,18 +142,14 @@ namespace Hotkey_Pad_WPF
                 MessageBox.Show("The port must be a integer!");
                 return;
             }
-            String[] row = { ipAddress, port.ToString(), "Testname" };
 
-            
-            lvServerList.Items.Add(new connectionListViewItem { IP_Address = ipAddress, Port = port.ToString(), Connection_Status = "WHY" });
+            lvServerListItem lvItem = new lvServerListItem { IP_Address = ipAddress, Port = port.ToString(), Connection_Status = "WHY" };
+            lvServerList.Items.Add(lvItem);
+            lvItem.Connection_Status = "AA";
+
         }
 
-        public struct connectionListViewItem
-        {
-            public string IP_Address { get; set; }
-            public string Port { get; set; }
-            public string Connection_Status { get; set; }
-        }
+        
 
         private void btnRemoveCheckedConnections_Click(object sender, RoutedEventArgs e)
         { //removes items selected in the server list.
