@@ -11,6 +11,6 @@ namespace Hotkey_Pad
 
         public string IP_Address { get; set; }
         public string Port { get; set; }
-        public string Connection_Status { get; set} ;
+        public string Connection_Status { get; set; }
     } 
 }
