@@ -1,5 +1,6 @@
 ﻿using Hotkey_Pad;
 using Hotkey_Pad.Properties;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
@@ -60,6 +61,23 @@ namespace Hotkey_Pad_WPF
                 }
             }
             catch { }
+
+            //populate buttonData
+            if (Settings.Default.buttonData.Equals(""))
+            { //populate us with some basic data
+                for (int i = 0; i < rowButtonNum; i++) {
+                    Pad.buttonDataList.Add(new List<ButtonData>());
+                    for (int j = 0; j < colButtonNum; j++)
+                    {
+                        Pad.buttonDataList[i].Add(new ButtonData());
+                    }
+                }
+
+            } else
+            { //populate with saved data
+                Pad.buttonDataList = JsonConvert.DeserializeObject<List<List<ButtonData>>>(Settings.Default.buttonData);
+            }
+
 
             foreach (TabItem tabItem in tabControl1.Items)
             {
@@ -200,6 +218,9 @@ namespace Hotkey_Pad_WPF
                 servers.Add(serverName); //adds the connection info to the config
             }
             Settings.Default.connectData = servers;
+
+            Settings.Default.buttonData = JsonConvert.SerializeObject(Pad.buttonDataList);
+
             Settings.Default.Save();
         }
 

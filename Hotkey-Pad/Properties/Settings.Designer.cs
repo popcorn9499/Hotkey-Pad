@@ -72,9 +72,10 @@ namespace Hotkey_Pad.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public global::System.Collections.Specialized.StringCollection buttonData {
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string buttonData {
             get {
-                return ((global::System.Collections.Specialized.StringCollection)(this["buttonData"]));
+                return ((string)(this["buttonData"]));
             }
             set {
                 this["buttonData"] = value;
