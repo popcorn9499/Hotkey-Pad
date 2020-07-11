@@ -71,7 +71,9 @@
       <DependentUpon>ButtonPadEditor.xaml</DependentUpon>
     </Compile>
     <Compile Include="ButtonWrapper.cs" />
+    <Compile Include="ConnectionManager.cs" />
     <Compile Include="Hotkey.cs" />
+    <Compile Include="lvServerListItem.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
