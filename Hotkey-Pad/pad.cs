@@ -18,7 +18,7 @@ namespace Hotkey_Pad
         public int colButtonNum;
         public int buttonWidth;
         public int buttonHeight;
-        public List<List<ButtonWrapper>> buttonList = new List<List<ButtonWrapper>>();
+        public static List<List<ButtonData>> buttonDataList = new List<List<ButtonData>>();
         private TabItem tabPage;
         private Grid grid;
 
@@ -64,7 +64,6 @@ namespace Hotkey_Pad
             for (int rowNum = 0; rowNum < rowButtonNum; rowNum++)
             {
                 
-                buttonList.Add(new List<ButtonWrapper>());
                 for (int colNum = 0; colNum < colButtonNum; colNum++)
                 {
                     Button MyControl1 = new Button();
