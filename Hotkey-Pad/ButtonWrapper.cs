@@ -16,6 +16,9 @@ namespace Hotkey_Pad
         public Button thisButton = new Button();
 
         public ButtonData buttonData;
+        
+        public delegate void buttonClickEventDelegate(object sender, RoutedEventArgs e, ButtonData buttonData);
+        public buttonClickEventDelegate buttonClickEvent;
 
 
         public ButtonWrapper(ButtonData buttonData,string text, Thickness margin, Color? backColor = null, 
@@ -45,9 +48,9 @@ namespace Hotkey_Pad
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("HI");
-            ButtonPadEditor x = new ButtonPadEditor(buttonData);
-            x.Show();
+            buttonClickEvent.Invoke(sender, e, this.buttonData);
+            //ButtonPadEditor x = new ButtonPadEditor(buttonData);
+            //x.Show();
         }
 
     }

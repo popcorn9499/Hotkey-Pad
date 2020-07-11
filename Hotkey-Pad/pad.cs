@@ -71,6 +71,7 @@ namespace Hotkey_Pad
                     Grid.SetColumn(buttonWrapper.thisButton, colNum);
                     Grid.SetRow(buttonWrapper.thisButton, rowNum);
                     this.grid.Children.Add(buttonWrapper.thisButton);
+                    buttonWrapper.buttonClickEvent += ButtonEditor_Click;
                     //Button MyControl1 = new Button();
                     /*MyControl1.Content = ;
                     MyControl1.Name = "Button";
@@ -86,11 +87,10 @@ namespace Hotkey_Pad
 
 
         }
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void ButtonEditor_Click(object sender, RoutedEventArgs e, ButtonData buttonData)
         {
-            MessageBox.Show("HI");
-            //ButtonPadEditor x = new ButtonPadEditor();
-            //x.Show();
+            ButtonPadEditor x = new ButtonPadEditor(buttonData);
+            x.Show();
         }
 
 
