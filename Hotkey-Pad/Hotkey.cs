@@ -10,30 +10,41 @@ namespace Hotkey_Pad
 {
     public class Hotkey
     {
-        public Key Key { get; }
+        public Key key { get; }
 
-        public ModifierKeys Modifiers { get; }
+        public ModifierKeys modifiers { get; }
+
+        public Hotkey(string keyStr, string modifierStr)
+        {
+            int keyNum,modifierNum;
+
+            keyNum = int.Parse(keyStr);
+            modifierNum = int.Parse(modifierStr);
+            this.key = (Key)keyNum;
+            this.modifiers = (ModifierKeys)modifierNum;
+
+        }
 
         public Hotkey(Key key, ModifierKeys modifiers)
         {
-            Key = key;
-            Modifiers = modifiers;
+            this.key = key;
+            this.modifiers = modifiers;
         }
 
         public override string ToString()
         {
             var str = new StringBuilder();
 
-            if (Modifiers.HasFlag(ModifierKeys.Control))
+            if (modifiers.HasFlag(ModifierKeys.Control))
                 str.Append("Ctrl + ");
-            if (Modifiers.HasFlag(ModifierKeys.Shift))
+            if (modifiers.HasFlag(ModifierKeys.Shift))
                 str.Append("Shift + ");
-            if (Modifiers.HasFlag(ModifierKeys.Alt))
+            if (modifiers.HasFlag(ModifierKeys.Alt))
                 str.Append("Alt + ");
-            if (Modifiers.HasFlag(ModifierKeys.Windows))
+            if (modifiers.HasFlag(ModifierKeys.Windows))
                 str.Append("Win + ");
 
-            str.Append(Key);
+            str.Append(key);
 
             return str.ToString();
         }
