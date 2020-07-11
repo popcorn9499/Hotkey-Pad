@@ -79,8 +79,12 @@ namespace Hotkey_Pad
         {
             ComboBox cb = (ComboBox)sender;
 
-            cb.Items.Add("123");
-            cb.Items.Add("!A@#$");
+            foreach (ConnectionManager item in ConnectionManager.Connection_List)
+            {
+                lvServerListItem lvItem = item.lvItem;
+                String data = lvItem.IP_Address + ":" + lvItem.Port;
+                cb.Items.Add(data);
+            }
         }
     }
 }
