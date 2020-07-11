@@ -69,5 +69,16 @@ namespace Hotkey_Pad.Properties {
                 this["connectData"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.Collections.Specialized.StringCollection buttonData {
+            get {
+                return ((global::System.Collections.Specialized.StringCollection)(this["buttonData"]));
+            }
+            set {
+                this["buttonData"] = value;
+            }
+        }
     }
 }

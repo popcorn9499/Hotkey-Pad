@@ -67,6 +67,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="ButtonData.cs" />
     <Compile Include="ButtonPadEditor.xaml.cs">
       <DependentUpon>ButtonPadEditor.xaml</DependentUpon>
     </Compile>
