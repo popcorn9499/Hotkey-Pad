@@ -91,7 +91,7 @@ namespace Hotkey_Pad
 
                 }
                 catch (Exception e) {}
-                await Task.Delay(2000);
+                await Task.Delay(2000); //wait to prevent halting the program on reconnections
             }
         }
     }

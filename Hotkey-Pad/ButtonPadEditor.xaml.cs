@@ -86,5 +86,10 @@ namespace Hotkey_Pad
                 cb.Items.Add(data);
             }
         }
+
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            
+        }
     }
 }

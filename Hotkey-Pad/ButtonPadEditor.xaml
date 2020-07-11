@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="ButtonPadEditor" Height="320.876" Width="749.064">
     <Grid>
-        <ComboBox HorizontalAlignment="Left" Margin="454,57,0,0" VerticalAlignment="Top" Width="243" Height="39" Loaded="ComboBox_Loaded"/>
+        <ComboBox HorizontalAlignment="Left" Margin="454,57,0,0" VerticalAlignment="Top" Width="243" Height="39" Loaded="ComboBox_Loaded" SelectionChanged="ComboBox_SelectionChanged"/>
         <GroupBox Header="Hotkey" HorizontalAlignment="Left" Height="100" Margin="0,180,0,0" VerticalAlignment="Top" Width="390">
             <Grid Height="89" Margin="0,-6,-2,-6" VerticalAlignment="Top">
                 <TextBox HorizontalAlignment="Left" Height="41" Margin="10,44,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="352" PreviewKeyDown="TextBox_PreviewKeyDown"/>

@@ -32,8 +32,6 @@ namespace Hotkey_Pad
             this.colButtonNum = colButtonNum;
 
             this.grid = (Grid)(tabPage.Content);
-            //this.buttonWidth = (int)((tabPage.Width - buttonXPadding * rowButtonNum) / rowButtonNum);
-            //this.buttonHeight = (int)((tabPage.Height - buttonYPadding * colButtonNum) / colButtonNum);
 
             this.tabPage = tabPage;
             if ((tabPage.Content.GetType()) == typeof(Grid))
@@ -79,21 +77,7 @@ namespace Hotkey_Pad
                     Grid.SetColumn(MyControl1, colNum);
                     Grid.SetRow(MyControl1, rowNum);
                     this.grid.Children.Add(MyControl1);
-
                 }
-
-
-                /*{
-                    tabPa
-                    int pointX = (buttonXPadding / 2) + (buttonWidth * rowNum) + buttonXPadding * rowNum;
-                    int pointY = (buttonYPadding / 2) + (buttonHeight * colNum) + buttonYPadding * colNum;
-                    ButtonWrapper buttonTemp = new ButtonWrapper(pointX, pointY, buttonHeight, buttonWidth, "TEST");
-                    this.tabPage.Controls.Add(buttonTemp.thisButton);
-                    buttonList[rowNum].Add(buttonTemp);
-                }
-                */
-
-
             }
 
 
