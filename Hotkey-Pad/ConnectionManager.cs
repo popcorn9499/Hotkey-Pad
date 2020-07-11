@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -13,7 +13,7 @@ namespace Hotkey_Pad
     {
         private string ip;
         private int port;
-        private lvServerListItem lvItem;
+        public lvServerListItem lvItem;
         private const string CONNECTION_ATTEMPING = "Connecting";
         private const string CONNECTED = "Connected!";
         private bool closeConnection = false;
