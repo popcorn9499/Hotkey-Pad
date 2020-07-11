@@ -1,4 +1,4 @@
-﻿using Hotkey_Pad;
+using Hotkey_Pad;
 using Hotkey_Pad.Properties;
 using System;
 using System.Collections.Generic;
@@ -131,6 +131,32 @@ namespace Hotkey_Pad_WPF
             pad.regenButtons();
             padEditor.regenButtons();
         }
+
+        private void btnAddConnection_Click(object sender, RoutedEventArgs e)
+        {
+            //btnAddConnectionIP
+            //btnAddConnectionPort
+            String ipAddress = tbAddConnectionIP.Text;
+            Int32 port;
+
+            if (!int.TryParse(tbAddConnectionPort.Text, out port))
+            {
+                MessageBox.Show("The port must be a integer!");
+                return;
+            }
+            String[] row = { ipAddress, port.ToString(), "Testname" };
+
+            
+            lvServerList.Items.Add(new Items { IP_Address = ipAddress, Port = port.ToString(), Connection_Status = "WHY" });
+        }
+
+        public struct Items
+        {
+            public string IP_Address { get; set; }
+            public string Port { get; set; }
+            public string Connection_Status { get; set; }
+        }
+
 
         private void tb_rowButtonNum_TextChanged(object sender, TextChangedEventArgs e)
         { //saves the setting change and adds it to the pad

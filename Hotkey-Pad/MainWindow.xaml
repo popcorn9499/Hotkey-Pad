@@ -22,10 +22,10 @@
                     <TextBox x:Name="tb_rowButtonNum" HorizontalAlignment="Left" Height="23" Margin="162,14,0,0" TextWrapping="Wrap" Text="5" VerticalAlignment="Top" Width="120" TextChanged="tb_rowButtonNum_TextChanged"/>
                     <TextBox x:Name="tb_colButtonNum" HorizontalAlignment="Left" Height="23" Margin="162,54,0,0" TextWrapping="Wrap" Text="5" VerticalAlignment="Top" Width="120" TextChanged="tb_colButtonNum_TextChanged"/>
                     <TextBox x:Name="tb_buttonPadding" HorizontalAlignment="Left" Height="23" Margin="162,97,0,0" TextWrapping="Wrap" Text="4" VerticalAlignment="Top" Width="120" TextChanged="tb_buttonPadding_TextChanged"/>
-                    <ListView HorizontalAlignment="Left" Height="238" Margin="415,10,0,0" VerticalAlignment="Top" Width="351">
+                    <ListView x:Name="lvServerList" HorizontalAlignment="Left" Height="238" Margin="415,10,0,0" VerticalAlignment="Top" Width="351">
                         <ListView.View>
                             <GridView>
-                                <GridViewColumn Header="Hostname" DisplayMemberBinding="{Binding Hostname}" Width="100"/>
+                                <GridViewColumn Header="Hostname" DisplayMemberBinding="{Binding IP_Address}" Width="100"/>
                                 <GridViewColumn Header="Port" DisplayMemberBinding="{Binding Port}" Width="80"/>
                                 <GridViewColumn Header="Connection Status" DisplayMemberBinding="{Binding Connection_Status}" Width="150"/>
                             </GridView>
@@ -35,8 +35,8 @@
                         <Grid HorizontalAlignment="Left" Height="101" Margin="0,-28,-2,-2" VerticalAlignment="Top" Width="190">
                             <Label Content="IP: " HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
                             <Label Content="Port:" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top"/>
-                            <TextBox x:Name="btnAddConnectionPort" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="10000" VerticalAlignment="Top" Width="120" Margin="49,45,0,0"/>
-                            <TextBox x:Name="btnAddConnectionIP" HorizontalAlignment="Left" Height="23" Margin="49,14,0,0" TextWrapping="Wrap" Text="127.0.0.1" VerticalAlignment="Top" Width="120"/>
+                            <TextBox x:Name="tbAddConnectionPort" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="10000" VerticalAlignment="Top" Width="120" Margin="49,45,0,0"/>
+                            <TextBox x:Name="tbAddConnectionIP" HorizontalAlignment="Left" Height="23" Margin="49,14,0,0" TextWrapping="Wrap" Text="127.0.0.1" VerticalAlignment="Top" Width="120"/>
                             <Button x:Name="btnAddConnection" Content="Add Connection" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="49,73,0,0" RenderTransformOrigin="8.315,6.388" Click="btnAddConnection_Click"/>
                         </Grid>
                     </GroupBox>
