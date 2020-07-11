@@ -156,8 +156,12 @@ namespace Hotkey_Pad_WPF
         }
 
         private void btnRemoveCheckedConnections_Click(object sender, RoutedEventArgs e)
-        {
-
+        { //removes items selected in the server list.
+            var selected = lvServerList.SelectedItems.Cast<Object>().ToArray();
+            foreach (var eachItem in selected)
+            {
+                lvServerList.Items.Remove(eachItem);
+            }
         }
 
         private void tb_rowButtonNum_TextChanged(object sender, TextChangedEventArgs e)

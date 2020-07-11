@@ -40,7 +40,7 @@
                             <Button x:Name="btnAddConnection" Content="Add Connection" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="49,73,0,0" RenderTransformOrigin="8.315,6.388" Click="btnAddConnection_Click"/>
                         </Grid>
                     </GroupBox>
-                    <Button x:Name="btnRemoveCheckedConnections" HorizontalAlignment="Left" VerticalAlignment="Top" Width="109" Margin="436,279,0,0" Height="61">
+                    <Button x:Name="btnRemoveCheckedConnections" HorizontalAlignment="Left" VerticalAlignment="Top" Width="109" Margin="436,279,0,0" Height="61" Click="btnRemoveCheckedConnections_Click">
                         <TextBlock TextWrapping="Wrap">Remove Checked Connections</TextBlock>
                     </Button>
                 </Grid>
