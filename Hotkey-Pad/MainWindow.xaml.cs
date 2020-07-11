@@ -134,8 +134,6 @@ namespace Hotkey_Pad_WPF
 
         private void btnAddConnection_Click(object sender, RoutedEventArgs e)
         {
-            //btnAddConnectionIP
-            //btnAddConnectionPort
             String ipAddress = tbAddConnectionIP.Text;
             Int32 port;
 
