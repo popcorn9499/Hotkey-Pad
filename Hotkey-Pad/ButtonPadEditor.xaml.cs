@@ -19,9 +19,28 @@ namespace Hotkey_Pad
     /// </summary>
     public partial class ButtonPadEditor : Window
     {
-        public ButtonPadEditor()
+        private ButtonData buttonData;
+
+        public ButtonPadEditor(ButtonData buttonData)
         {
+            this.buttonData = buttonData;
+
+
             InitializeComponent();
+
+            tbBtnName.Text = this.buttonData.BtnText;
+            cbHotkeyEnable.IsChecked = this.buttonData.hotkeyEnable;
+            tbHotkey.Text = this.buttonData.hotkeyCombo;
+            cbCmdEnable.IsChecked = this.buttonData.cmdExeEnable;
+            tbCmd.Text = this.buttonData.cmdExeCommand;
+
+            foreach (ConnectionManager item in ConnectionManager.Connection_List)
+            {
+                lvServerListItem lvItem = item.lvItem;
+                String data = lvItem.IP_Address + ":" + lvItem.Port;
+                cbCurrentConnection.Items.Add(data);
+            }
+            cbCurrentConnection.Text = this.buttonData.Connection;
         }
 
 
@@ -77,19 +96,18 @@ namespace Hotkey_Pad
 
         private void ComboBox_Loaded(object sender, RoutedEventArgs e)
         {
-            ComboBox cb = (ComboBox)sender;
-
-            foreach (ConnectionManager item in ConnectionManager.Connection_List)
-            {
-                lvServerListItem lvItem = item.lvItem;
-                String data = lvItem.IP_Address + ":" + lvItem.Port;
-                cb.Items.Add(data);
-            }
+            
         }
 
-        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            
+            this.buttonData.BtnText = tbBtnName.Text.ToString();
+            this.buttonData.hotkeyEnable = (bool)cbHotkeyEnable.IsChecked;
+            this.buttonData.hotkeyCombo = tbHotkey.Text;
+            this.buttonData.cmdExeEnable = (bool)cbCmdEnable.IsChecked;
+            this.buttonData.cmdExeCommand = tbCmd.Text;
+            this.buttonData.Connection = cbCurrentConnection.Text;
+
         }
     }
 }

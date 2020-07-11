@@ -5,30 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Hotkey_Pad"
         mc:Ignorable="d"
-        Title="ButtonPadEditor" Height="320.876" Width="749.064">
+        Title="ButtonPadEditor" Height="320.876" Width="749.064" Closing="Window_Closing">
     <Grid>
-        <ComboBox HorizontalAlignment="Left" Margin="454,57,0,0" VerticalAlignment="Top" Width="243" Height="39" Loaded="ComboBox_Loaded" SelectionChanged="ComboBox_SelectionChanged"/>
+        <ComboBox x:Name="cbCurrentConnection" HorizontalAlignment="Left" Margin="454,57,0,0" VerticalAlignment="Top" Width="243" Height="39" Loaded="ComboBox_Loaded"/>
         <GroupBox Header="Hotkey" HorizontalAlignment="Left" Height="100" Margin="0,180,0,0" VerticalAlignment="Top" Width="390">
             <Grid Height="89" Margin="0,-6,-2,-6" VerticalAlignment="Top">
-                <TextBox HorizontalAlignment="Left" Height="41" Margin="10,44,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="352" PreviewKeyDown="TextBox_PreviewKeyDown"/>
-                <CheckBox Content="Enabled" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,18,0,0"/>
+                <TextBox x:Name="tbHotkey" HorizontalAlignment="Left" Height="41" Margin="10,44,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="352" PreviewKeyDown="TextBox_PreviewKeyDown"/>
+                <CheckBox x:Name="cbHotkeyEnable" Content="Enabled" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,18,0,0"/>
             </Grid>
         </GroupBox>
         <GroupBox Header="Command Execute&#xD;&#xA;" HorizontalAlignment="Left" Height="100" Margin="424,180,0,0" VerticalAlignment="Top" Width="317">
             <Grid HorizontalAlignment="Left" Height="90" Margin="0,-23,-19,-6" VerticalAlignment="Top" Width="322">
-                <TextBox HorizontalAlignment="Left" Height="42" Margin="10,38,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="292" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto"/>
-                <CheckBox Content="Enabled" HorizontalAlignment="Left" Margin="10,18,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="tbCmd" HorizontalAlignment="Left" Height="42" Margin="10,38,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="292" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto"/>
+                <CheckBox x:Name="cbCmdEnable" Content="Enabled" HorizontalAlignment="Left" Margin="10,18,0,0" VerticalAlignment="Top"/>
             </Grid>
         </GroupBox>
         <Label Content="Connection&#xD;&#xA;" HorizontalAlignment="Left" Margin="454,22,0,0" VerticalAlignment="Top" Width="243" Height="35"/>
         <GroupBox Header="Button Text&#xD;&#xA;" HorizontalAlignment="Left" Height="129" Margin="10,10,0,0" VerticalAlignment="Top" Width="110">
-            <RichTextBox x:Name="richTB_btnName" HorizontalAlignment="Left" Height="107" Margin="0,-11,-6,-6" VerticalAlignment="Top" Width="104" AutomationProperties.HelpText="s">
-                <FlowDocument>
-                    <Paragraph>
-                        <Run Text="Button Name"/>
-                    </Paragraph>
-                </FlowDocument>
-            </RichTextBox>
+            <TextBox x:Name="tbBtnName" HorizontalAlignment="Left" Height="98" Margin="0,-6,-2,-2" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="100"/>
         </GroupBox>
 
     </Grid>
