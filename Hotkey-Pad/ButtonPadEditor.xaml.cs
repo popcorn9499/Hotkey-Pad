@@ -74,5 +74,13 @@ namespace Hotkey_Pad
             tb.Text = hotkey.ToString();
         
         }
+
+        private void ComboBox_Loaded(object sender, RoutedEventArgs e)
+        {
+            ComboBox cb = (ComboBox)sender;
+
+            cb.Items.Add("123");
+            cb.Items.Add("!A@#$");
+        }
     }
 }
