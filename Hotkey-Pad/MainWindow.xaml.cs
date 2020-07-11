@@ -1,4 +1,4 @@
-using Hotkey_Pad;
+﻿using Hotkey_Pad;
 using Hotkey_Pad.Properties;
 using System;
 using System.Collections.Generic;
@@ -37,11 +37,11 @@ namespace Hotkey_Pad_WPF
             tb_buttonPadding.Text = buttonPadding.ToString();
             tb_rowButtonNum.Text = rowButtonNum.ToString();
             tb_colButtonNum.Text = colButtonNum.ToString();
-            
+
 
             foreach (TabItem tabItem in tabControl1.Items)
             {
-                if (tabItem.Header.ToString().Equals("Pad")){
+                if (tabItem.Header.ToString().Equals("Pad")) {
                     /* MessageBox.Show(tabItem.Content.ToString());
                      MessageBox.Show(((tabItem.Content.GetType()) == typeof(Grid)).ToString());*/
                     this.pad = new Pad(tabItem, buttonPadding, rowButtonNum, colButtonNum);
@@ -52,13 +52,13 @@ namespace Hotkey_Pad_WPF
                     this.padEditor = new Pad(tabItem, buttonPadding, rowButtonNum, colButtonNum);
                 }
 
-                
-            }
-            
-        } 
-        
 
-        
+            }
+
+        }
+
+
+
         private void btnClick(object sender, RoutedEventArgs e)
         {
             Button x = (Button)sender;
@@ -80,8 +80,8 @@ namespace Hotkey_Pad_WPF
             double prevWindowWidth = e.PreviousSize.Width;
             if (prevWindowHeight == 0) prevWindowHeight = 450.0;
             if (prevWindowWidth == 0) prevWindowWidth = 800.0;
-            tabControl1.Height = newWindowHeight*(tabControl1.Height/prevWindowHeight);
-            tabControl1.Width = newWindowWidth*(tabControl1.Width/prevWindowWidth);
+            tabControl1.Height = newWindowHeight * (tabControl1.Height / prevWindowHeight);
+            tabControl1.Width = newWindowWidth * (tabControl1.Width / prevWindowWidth);
         }
 
         private void tb_colButtonNum_TextChanged(object sender, TextChangedEventArgs e)
@@ -107,7 +107,7 @@ namespace Hotkey_Pad_WPF
         private void tb_buttonPadding_TextChanged(object sender, TextChangedEventArgs e)
         { //saves the setting change and adds it to the pad
             int buttonPadding;
-  
+
             TextBox tb = (TextBox)sender;
             if (int.TryParse(tb.Text, out buttonPadding))
             {
@@ -117,7 +117,7 @@ namespace Hotkey_Pad_WPF
                     this.padEditor.buttonPadding = buttonPadding;
                     this.pad.buttonPadding = buttonPadding;
                 }
-                
+
             }
             else
             {
@@ -157,6 +157,10 @@ namespace Hotkey_Pad_WPF
             public string Connection_Status { get; set; }
         }
 
+        private void btnRemoveCheckedConnections_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
 
         private void tb_rowButtonNum_TextChanged(object sender, TextChangedEventArgs e)
         { //saves the setting change and adds it to the pad
