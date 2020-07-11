@@ -67,16 +67,20 @@ namespace Hotkey_Pad
                 for (int colNum = 0; colNum < colButtonNum; colNum++)
                 {
                     ButtonData dataItem = Pad.buttonDataList[rowNum][colNum];
-                    Button MyControl1 = new Button();
-                    MyControl1.Content = dataItem.BtnText;
+                    ButtonWrapper buttonWrapper = new ButtonWrapper(dataItem, dataItem.BtnText, new Thickness(this.buttonPadding));
+                    Grid.SetColumn(buttonWrapper.thisButton, colNum);
+                    Grid.SetRow(buttonWrapper.thisButton, rowNum);
+                    this.grid.Children.Add(buttonWrapper.thisButton);
+                    //Button MyControl1 = new Button();
+                    /*MyControl1.Content = ;
                     MyControl1.Name = "Button";
                     MyControl1.Margin = new Thickness(this.buttonPadding);
                     MyControl1.Cursor = Cursors.Arrow;
                     MyControl1.Click += Button_Click;
                     //MyControl1.Width = 90;
                     Grid.SetColumn(MyControl1, colNum);
-                    Grid.SetRow(MyControl1, rowNum);
-                    this.grid.Children.Add(MyControl1);
+                    Grid.SetRow(MyControl1, rowNum);*/
+                    //this.grid.Children.Add(MyControl1);
                 }
             }
 
@@ -85,8 +89,8 @@ namespace Hotkey_Pad
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("HI");
-            ButtonPadEditor x = new ButtonPadEditor();
-            x.Show();
+            //ButtonPadEditor x = new ButtonPadEditor();
+            //x.Show();
         }
 
 
