@@ -11,9 +11,9 @@ namespace Hotkey_Pad
     {
         public string Connection { get; set; } = "";
         public string BtnText { get; set; } = "Button Name";
-        public string cmdExeEnable { get; set; } = "false";
+        public bool cmdExeEnable { get; set; } = false;
         public string cmdExeCommand { get; set; } = "";
-        public string hotkeyEnable { get; set; } = "true";
+        public bool hotkeyEnable { get; set; } = false;
         public string hotkeyCombo { get; set; } = "";
     }
 }
