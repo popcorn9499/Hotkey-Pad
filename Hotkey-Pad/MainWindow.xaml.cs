@@ -145,10 +145,10 @@ namespace Hotkey_Pad_WPF
             String[] row = { ipAddress, port.ToString(), "Testname" };
 
             
-            lvServerList.Items.Add(new Items { IP_Address = ipAddress, Port = port.ToString(), Connection_Status = "WHY" });
+            lvServerList.Items.Add(new connectionListViewItem { IP_Address = ipAddress, Port = port.ToString(), Connection_Status = "WHY" });
         }
 
-        public struct Items
+        public struct connectionListViewItem
         {
             public string IP_Address { get; set; }
             public string Port { get; set; }
