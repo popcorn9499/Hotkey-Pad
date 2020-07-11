@@ -22,7 +22,7 @@
         </GroupBox>
         <Label Content="Connection&#xD;&#xA;" HorizontalAlignment="Left" Margin="454,22,0,0" VerticalAlignment="Top" Width="243" Height="35"/>
         <GroupBox Header="Button Text&#xD;&#xA;" HorizontalAlignment="Left" Height="129" Margin="10,10,0,0" VerticalAlignment="Top" Width="110">
-            <RichTextBox x:Name="richTB_btnName" HorizontalAlignment="Left" Height="107" Margin="0,-11,-6,-6" VerticalAlignment="Top" Width="104" TextChanged="richTB_btnName_TextChanged" AutomationProperties.HelpText="s">
+            <RichTextBox x:Name="richTB_btnName" HorizontalAlignment="Left" Height="107" Margin="0,-11,-6,-6" VerticalAlignment="Top" Width="104" AutomationProperties.HelpText="s">
                 <FlowDocument>
                     <Paragraph>
                         <Run Text="Button Name"/>
