@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -30,6 +30,15 @@ namespace Hotkey_Pad
                 {
                     return item;
                 }
+            }
+            return null;
+        }
+
+        public static ConnectionManager findConnection(string connectionString)
+        {
+            foreach (ConnectionManager item in Connection_List)
+            {
+                if (connectionString.Equals(item.ToString())) return item;
             }
             return null;
         }
