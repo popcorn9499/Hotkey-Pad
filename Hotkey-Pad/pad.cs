@@ -12,7 +12,6 @@ namespace Hotkey_Pad
 {
     public class Pad
     {
-
         public int buttonPadding;
         public int rowButtonNum;
         public int colButtonNum;
@@ -22,23 +21,19 @@ namespace Hotkey_Pad
         private TabItem tabPage;
         private Grid grid;
 
-
         public Pad(TabItem tabPage, int buttonPadding, int rowButtonNum, int colButtonNum)
         {
             this.buttonPadding = buttonPadding;
-
 
             this.rowButtonNum = rowButtonNum;
             this.colButtonNum = colButtonNum;
 
             this.grid = (Grid)(tabPage.Content);
-
             this.tabPage = tabPage;
             if ((tabPage.Content.GetType()) == typeof(Grid))
             {
                 this.regenButtons();
             }
-            
         }
 
         public void regenButtons()
@@ -63,7 +58,6 @@ namespace Hotkey_Pad
 
             for (int rowNum = 0; rowNum < rowButtonNum; rowNum++)
             {
-                
                 for (int colNum = 0; colNum < colButtonNum; colNum++)
                 {
                     ButtonData dataItem = Pad.buttonDataList[rowNum][colNum];
@@ -72,30 +66,14 @@ namespace Hotkey_Pad
                     Grid.SetRow(buttonWrapper.thisButton, rowNum);
                     this.grid.Children.Add(buttonWrapper.thisButton);
                     buttonWrapper.buttonClickEvent += ButtonEditor_Click;
-                    //Button MyControl1 = new Button();
-                    /*MyControl1.Content = ;
-                    MyControl1.Name = "Button";
-                    MyControl1.Margin = new Thickness(this.buttonPadding);
-                    MyControl1.Cursor = Cursors.Arrow;
-                    MyControl1.Click += Button_Click;
-                    //MyControl1.Width = 90;
-                    Grid.SetColumn(MyControl1, colNum);
-                    Grid.SetRow(MyControl1, rowNum);*/
-                    //this.grid.Children.Add(MyControl1);
                 }
             }
-
-
         }
+
         public virtual void ButtonEditor_Click(object sender, RoutedEventArgs e, ButtonData buttonData)
         {
             MessageBox.Show("HELLO)O");
 
         }
-
-
-
-
-
     }
 }

@@ -37,13 +37,10 @@ namespace Hotkey_Pad_WPF
             int rowButtonNum = Settings.Default.rowButtonNum;
             int colButtonNum = Settings.Default.colButtonNum;
 
-          
-
             InitializeComponent();
             tb_buttonPadding.Text = buttonPadding.ToString();
             tb_rowButtonNum.Text = rowButtonNum.ToString();
             tb_colButtonNum.Text = colButtonNum.ToString();
-
 
             if (Settings.Default.connectData == null)
             {
@@ -72,7 +69,6 @@ namespace Hotkey_Pad_WPF
                         Pad.buttonDataList[i].Add(new ButtonData());
                     }
                 }
-
             } else
             { //populate with saved data
                 Pad.buttonDataList = JsonConvert.DeserializeObject<List<List<ButtonData>>>(Settings.Default.buttonData);
@@ -82,19 +78,12 @@ namespace Hotkey_Pad_WPF
             foreach (TabItem tabItem in tabControl1.Items)
             {
                 if (tabItem.Header.ToString().Equals("Pad")) {
-                    /* MessageBox.Show(tabItem.Content.ToString());
-                     MessageBox.Show(((tabItem.Content.GetType()) == typeof(Grid)).ToString());*/
                     this.pad = new Pad(tabItem, buttonPadding, rowButtonNum, colButtonNum);
                 } else if (tabItem.Header.ToString().Equals("Pad Editor"))
                 {
-                    /* MessageBox.Show(tabItem.Content.ToString());
-                     MessageBox.Show(((tabItem.Content.GetType()) == typeof(Grid)).ToString());*/
                     this.padEditor = new EditorPad(tabItem, buttonPadding, rowButtonNum, colButtonNum);
                 }
-
-
             }
-
         }
 
 
@@ -213,7 +202,6 @@ namespace Hotkey_Pad_WPF
                 lvServerListItem lvItem = item.lvItem;
                 String ipAddress = lvItem.IP_Address; //gathers all the item information and creates a serverName
                 String port = lvItem.Port;
-
                 String serverName = ipAddress + ":" + port;
                 servers.Add(serverName); //adds the connection info to the config
             }
