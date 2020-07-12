@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using Henooh.DeviceEmulator;
+using Henooh.DeviceEmulator.Native;
+using System.Windows.Input;
 
 namespace Hotkey_Pad
 {
@@ -20,6 +23,8 @@ namespace Hotkey_Pad
         public static List<List<ButtonData>> buttonDataList = new List<List<ButtonData>>();
         private TabItem tabPage;
         private Grid grid;
+
+        private KeyboardController kb = new KeyboardController();
 
         public Pad(TabItem tabPage, int buttonPadding, int rowButtonNum, int colButtonNum)
         {
@@ -70,9 +75,31 @@ namespace Hotkey_Pad
             }
         }
 
-        public virtual void ButtonEditor_Click(object sender, RoutedEventArgs e, ButtonData buttonData)
+        public virtual async void ButtonEditor_Click(object sender, RoutedEventArgs e, ButtonData buttonData)
         {
-            MessageBox.Show("HELLO)O");
+            //MessageBox.Show("HELLO)O");
+            if (buttonData.CmdExeEnable)
+            {
+
+            }
+            if (buttonData.HotkeyEnable)
+            {
+                VirtualKeyCode key = buttonData.HotkeyCombo.KeyToVirtualKey();
+                ModifierKeys modifier = buttonData.HotkeyCombo.modifiers;
+
+                if (modifier.HasFlag(ModifierKeys.Control)) {
+                    this.kb.Control(key);
+                } else if (modifier.HasFlag(ModifierKeys.Shift)) {
+                    this.kb.Shift(key);
+                } else if (modifier.HasFlag(ModifierKeys.Alt)) {
+                    this.kb.Alt(key);
+                } else if (modifier.HasFlag(ModifierKeys.Windows)) {
+                    this.kb.Window(key);
+                } else {
+                    this.kb.Type(key);
+                }
+
+            }
 
         }
     }
