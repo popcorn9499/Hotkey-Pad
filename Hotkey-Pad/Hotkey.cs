@@ -15,6 +15,10 @@ namespace Hotkey_Pad
 
         public ModifierKeys modifiers { get; set; }
 
+        public int EvdevKey { get; set; }
+
+        public int[] EvdevKeyModifiers { get; set; }
+
         public Hotkey() {}
 
         public Hotkey(string keyStr, string modifierStr)
@@ -25,7 +29,8 @@ namespace Hotkey_Pad
             modifierNum = int.Parse(modifierStr);
             this.key = (Key)keyNum;
             this.modifiers = (ModifierKeys)modifierNum;
-
+            this.EvdevKey = KeyCodeTranslation.findEvdevKey(this.key);
+            this.EvdevKeyModifiers = KeyCodeTranslation.findEvdevModifierKeys(this.modifiers).ToArray();
         }
 
         public Hotkey(Key key, ModifierKeys modifiers)
