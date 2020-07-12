@@ -17,8 +17,10 @@ namespace Hotkey_Pad
         private const string CONNECTION_ATTEMPING = "Connecting";
         private const string CONNECTED = "Connected!";
         private bool closeConnection = false;
-
         public static List<ConnectionManager> Connection_List = new List<ConnectionManager>();
+
+        private StreamReader reader;
+        private StreamWriter writer;
 
         public static ConnectionManager findConnection(lvServerListItem lvItem)
         {
@@ -45,6 +47,18 @@ namespace Hotkey_Pad
             this.closeConnection = true;
         }
 
+        public async void Writer(String str)
+        {
+            try
+            {
+                await this.writer.WriteAsync(str + "\r\n");
+                await this.writer.FlushAsync();
+            } catch
+            {
+                //fill this with reconnect code if needed
+            }
+        }
+
         private async void createConnection()
         {
             //string host = "127.0.0.1";
@@ -58,18 +72,17 @@ namespace Hotkey_Pad
                     TcpClient client = new TcpClient();
 
                     NetworkStream netstream;
-                    StreamReader reader;
-                    StreamWriter writer;
+
 
                     await client.ConnectAsync(this.ip, this.port); //connects to the host on port specified
                     netstream = client.GetStream();
 
                     //gets the stream reader and writer
-                    reader = new StreamReader(netstream);
-                    writer = new StreamWriter(netstream);
+                    this.reader = new StreamReader(netstream);
+                    this.writer = new StreamWriter(netstream);
 
                     //sets details for the connection
-                    writer.AutoFlush = true;
+                    this.writer.AutoFlush = true;
 
                     netstream.ReadTimeout = timeout;
 
@@ -80,7 +93,7 @@ namespace Hotkey_Pad
                     this.lvItem.Connection_Status = CONNECTED;
                     while (true) //start reading for messages
                     {
-                        String response = await reader.ReadLineAsync();
+                        String response = await this.reader.ReadLineAsync();
                         if (this.closeConnection)
                         {
                             break;
