@@ -35,6 +35,8 @@ namespace Hotkey_Pad
             cbCmdEnable.IsChecked = this.buttonData.CmdExeEnable;
             tbCmd.Text = this.buttonData.CmdExeCommand;
 
+            cbCurrentConnection.Items.Add(""); //adds a blank item so you can reset the button to blankness
+
             foreach (ConnectionManager item in ConnectionManager.Connection_List)
             {
                 lvServerListItem lvItem = item.lvItem;
