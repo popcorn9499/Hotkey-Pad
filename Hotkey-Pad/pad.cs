@@ -84,19 +84,34 @@ namespace Hotkey_Pad
             }
             if (buttonData.HotkeyEnable)
             {
-                VirtualKeyCode key = buttonData.HotkeyCombo.KeyToVirtualKey();
-                ModifierKeys modifier = buttonData.HotkeyCombo.modifiers;
+                if (buttonData.Connection.Equals(""))
+                { //local connection management
+                    VirtualKeyCode key = buttonData.HotkeyCombo.KeyToVirtualKey();
+                    ModifierKeys modifier = buttonData.HotkeyCombo.modifiers;
 
-                if (modifier.HasFlag(ModifierKeys.Control)) {
-                    this.kb.Control(key);
-                } else if (modifier.HasFlag(ModifierKeys.Shift)) {
-                    this.kb.Shift(key);
-                } else if (modifier.HasFlag(ModifierKeys.Alt)) {
-                    this.kb.Alt(key);
-                } else if (modifier.HasFlag(ModifierKeys.Windows)) {
-                    this.kb.Window(key);
-                } else {
-                    this.kb.Type(key);
+                    if (modifier.HasFlag(ModifierKeys.Control))
+                    {
+                        this.kb.Control(key);
+                    }
+                    else if (modifier.HasFlag(ModifierKeys.Shift))
+                    {
+                        this.kb.Shift(key);
+                    }
+                    else if (modifier.HasFlag(ModifierKeys.Alt))
+                    {
+                        this.kb.Alt(key);
+                    }
+                    else if (modifier.HasFlag(ModifierKeys.Windows))
+                    {
+                        this.kb.Window(key);
+                    }
+                    else
+                    {
+                        this.kb.Type(key);
+                    }
+                } else
+                {
+
                 }
 
             }
