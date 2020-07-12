@@ -1,9 +1,11 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Henooh.DeviceEmulator;
+using Henooh.DeviceEmulator.Native;
 
 namespace Hotkey_Pad
 {
@@ -17,7 +19,7 @@ namespace Hotkey_Pad
 
         public Hotkey(string keyStr, string modifierStr)
         {
-            int keyNum,modifierNum;
+            int keyNum, modifierNum;
 
             keyNum = int.Parse(keyStr);
             modifierNum = int.Parse(modifierStr);
@@ -30,6 +32,25 @@ namespace Hotkey_Pad
         {
             this.key = key;
             this.modifiers = modifiers;
+        }
+
+        public VirtualKeyCode KeyToVirtualKey() {
+            VirtualKeyCode data = (VirtualKeyCode)KeyInterop.VirtualKeyFromKey(this.key);
+            return data;
+        }
+
+        public VirtualKeyCode ModifierKeyToVirtualKey()
+        {
+
+            if (modifiers.HasFlag(ModifierKeys.Control))
+                return VirtualKeyCode.CONTROL;
+            if (modifiers.HasFlag(ModifierKeys.Shift))
+                return VirtualKeyCode.SHIFT;
+            if (modifiers.HasFlag(ModifierKeys.Alt))
+                return VirtualKeyCode.MENU;
+            if (modifiers.HasFlag(ModifierKeys.Windows))
+                return VirtualKeyCode.RWIN;
+            throw new NoModifier();
         }
 
         public override string ToString()
@@ -50,5 +71,10 @@ namespace Hotkey_Pad
                 return str.ToString();
             return "";
         }
+    }
+
+    public class NoModifier : Exception
+    {
+        public NoModifier() : base() { }
     }
 }
