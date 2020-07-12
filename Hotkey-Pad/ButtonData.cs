@@ -14,7 +14,7 @@ namespace Hotkey_Pad
         public bool CmdExeEnable { get; set; } = false;
         public string CmdExeCommand { get; set; } = "";
         public bool HotkeyEnable { get; set; } = false;
-        public string HotkeyCombo { get; set; } = "";
+        public Hotkey HotkeyCombo { get; set; } = new Hotkey();
 
 
         public bool CompareTo(ButtonData buttonData2)
@@ -24,8 +24,9 @@ namespace Hotkey_Pad
             if (this.CmdExeEnable != buttonData2.CmdExeEnable) return false;
             if (!this.CmdExeCommand.Equals(buttonData2.CmdExeCommand)) return false;
             if (this.HotkeyEnable != buttonData2.HotkeyEnable) return false;
-            if (!this.HotkeyCombo.Equals(buttonData2.HotkeyCombo)) return false;
+            if (this.HotkeyCombo != buttonData2.HotkeyCombo) return false;
             return true;
         }
     }
 }
+

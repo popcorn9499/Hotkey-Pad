@@ -31,7 +31,7 @@ namespace Hotkey_Pad
 
             tbBtnName.Text = this.buttonData.BtnText;
             cbHotkeyEnable.IsChecked = this.buttonData.HotkeyEnable;
-            tbHotkey.Text = this.buttonData.HotkeyCombo;
+            tbHotkey.Text = this.buttonData.HotkeyCombo.ToString();
             cbCmdEnable.IsChecked = this.buttonData.CmdExeEnable;
             tbCmd.Text = this.buttonData.CmdExeCommand;
 
@@ -92,7 +92,7 @@ namespace Hotkey_Pad
 
             TextBox tb = (TextBox)sender;
             tb.Text = hotkey.ToString();
-        
+            this.buttonData.HotkeyCombo = hotkey;
         }
 
         private void ComboBox_Loaded(object sender, RoutedEventArgs e)
@@ -104,7 +104,6 @@ namespace Hotkey_Pad
         {
             this.buttonData.BtnText = tbBtnName.Text.ToString();
             this.buttonData.HotkeyEnable = (bool)cbHotkeyEnable.IsChecked;
-            this.buttonData.HotkeyCombo = tbHotkey.Text;
             this.buttonData.CmdExeEnable = (bool)cbCmdEnable.IsChecked;
             this.buttonData.CmdExeCommand = tbCmd.Text;
             this.buttonData.Connection = cbCurrentConnection.Text;

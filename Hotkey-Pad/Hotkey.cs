@@ -1,10 +1,9 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
-
 
 namespace Hotkey_Pad
 {
@@ -13,6 +12,8 @@ namespace Hotkey_Pad
         public Key key { get; }
 
         public ModifierKeys modifiers { get; }
+
+        public Hotkey() {}
 
         public Hotkey(string keyStr, string modifierStr)
         {
@@ -45,8 +46,9 @@ namespace Hotkey_Pad
                 str.Append("Win + ");
 
             str.Append(key);
-
-            return str.ToString();
+            if (str == null) //cleans it up so that we dont just have a (None) String
+                return str.ToString();
+            return "";
         }
     }
 }
