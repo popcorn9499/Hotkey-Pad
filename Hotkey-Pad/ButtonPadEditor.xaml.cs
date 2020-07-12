@@ -39,9 +39,7 @@ namespace Hotkey_Pad
 
             foreach (ConnectionManager item in ConnectionManager.Connection_List)
             {
-                lvServerListItem lvItem = item.lvItem;
-                String data = lvItem.IP_Address + ":" + lvItem.Port;
-                cbCurrentConnection.Items.Add(data);
+                cbCurrentConnection.Items.Add(item.ToString());
             }
             cbCurrentConnection.Text = this.buttonData.Connection;
         }

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -40,6 +40,11 @@ namespace Hotkey_Pad
             this.port = port;
             this.lvItem = lvItem;
             this.createConnection();
+        }
+
+        public override string ToString()
+        {
+            return this.ip + ":" + this.port;
         }
 
         public void close()
