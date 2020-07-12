@@ -29,10 +29,10 @@ namespace Hotkey_Pad
             InitializeComponent();
 
             tbBtnName.Text = this.buttonData.BtnText;
-            cbHotkeyEnable.IsChecked = this.buttonData.hotkeyEnable;
-            tbHotkey.Text = this.buttonData.hotkeyCombo;
-            cbCmdEnable.IsChecked = this.buttonData.cmdExeEnable;
-            tbCmd.Text = this.buttonData.cmdExeCommand;
+            cbHotkeyEnable.IsChecked = this.buttonData.HotkeyEnable;
+            tbHotkey.Text = this.buttonData.HotkeyCombo;
+            cbCmdEnable.IsChecked = this.buttonData.CmdExeEnable;
+            tbCmd.Text = this.buttonData.CmdExeCommand;
 
             foreach (ConnectionManager item in ConnectionManager.Connection_List)
             {
@@ -102,10 +102,10 @@ namespace Hotkey_Pad
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             this.buttonData.BtnText = tbBtnName.Text.ToString();
-            this.buttonData.hotkeyEnable = (bool)cbHotkeyEnable.IsChecked;
-            this.buttonData.hotkeyCombo = tbHotkey.Text;
-            this.buttonData.cmdExeEnable = (bool)cbCmdEnable.IsChecked;
-            this.buttonData.cmdExeCommand = tbCmd.Text;
+            this.buttonData.HotkeyEnable = (bool)cbHotkeyEnable.IsChecked;
+            this.buttonData.HotkeyCombo = tbHotkey.Text;
+            this.buttonData.CmdExeEnable = (bool)cbCmdEnable.IsChecked;
+            this.buttonData.CmdExeCommand = tbCmd.Text;
             this.buttonData.Connection = cbCurrentConnection.Text;
 
         }
