@@ -89,7 +89,7 @@ namespace Hotkey_Pad_WPF
                 {
                     /* MessageBox.Show(tabItem.Content.ToString());
                      MessageBox.Show(((tabItem.Content.GetType()) == typeof(Grid)).ToString());*/
-                    this.padEditor = new Pad(tabItem, buttonPadding, rowButtonNum, colButtonNum);
+                    this.padEditor = new EditorPad(tabItem, buttonPadding, rowButtonNum, colButtonNum);
                 }
 
 

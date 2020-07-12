@@ -87,10 +87,10 @@ namespace Hotkey_Pad
 
 
         }
-        private void ButtonEditor_Click(object sender, RoutedEventArgs e, ButtonData buttonData)
+        public virtual void ButtonEditor_Click(object sender, RoutedEventArgs e, ButtonData buttonData)
         {
-            ButtonPadEditor x = new ButtonPadEditor(buttonData);
-            x.Show();
+            MessageBox.Show("HELLO)O");
+
         }
 
 
