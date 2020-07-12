@@ -26,7 +26,11 @@ namespace Hotkey_Pad
         {
             this.buttonData = buttonData;
 
-            this.thisButton.Content = text;
+            TextBlock thisButtonText = new TextBlock();
+            thisButtonText.Text = text;
+            thisButtonText.TextWrapping = TextWrapping.Wrap;
+            thisButtonText.Padding = new Thickness(5);
+            this.thisButton.Content = thisButtonText;
             this.thisButton.Name = name;
             this.thisButton.Margin = margin;
             this.thisButton.Cursor = Cursors.Arrow;
