@@ -20,11 +20,12 @@ namespace Hotkey_Pad
     public partial class ButtonPadEditor : Window
     {
         private ButtonData buttonData;
+        private Pad pad;
 
-        public ButtonPadEditor(ButtonData buttonData)
+        public ButtonPadEditor(ButtonData buttonData, Pad pad)
         {
             this.buttonData = buttonData;
-
+            this.pad = pad;
 
             InitializeComponent();
 
@@ -107,7 +108,7 @@ namespace Hotkey_Pad
             this.buttonData.CmdExeEnable = (bool)cbCmdEnable.IsChecked;
             this.buttonData.CmdExeCommand = tbCmd.Text;
             this.buttonData.Connection = cbCurrentConnection.Text;
-
+            this.pad.regenButtons();
         }
     }
 }

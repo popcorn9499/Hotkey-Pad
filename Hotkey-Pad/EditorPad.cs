@@ -18,7 +18,7 @@ namespace Hotkey_Pad
 
         public override void ButtonEditor_Click(object sender, RoutedEventArgs e, ButtonData buttonData)
         {
-            ButtonPadEditor x = new ButtonPadEditor(buttonData);
+            ButtonPadEditor x = new ButtonPadEditor(buttonData,this);
             x.Show();
         }
     }
