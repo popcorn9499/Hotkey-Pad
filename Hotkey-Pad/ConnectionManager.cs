@@ -105,14 +105,23 @@ namespace Hotkey_Pad
 
                     //create this as a async task so it can be canceled if the connection has been ended or use another method to remove it
                     this.lvItem.Connection_Status = CONNECTED;
+                    int badReads = 0;
                     while (true) //start reading for messages
                     {
                         String response = await this.reader.ReadLineAsync();
+                        if (response == null)
+                        {
+                            badReads++;
+                        }
+                        if (badReads > 100) //prevents a process sending null data infinitely from causing high cpu
+                        {
+                            break;
+                        }
+                        
                         if (this.closeConnection)
                         {
                             break;
                         }
-               
                     }
 
 
