@@ -37,6 +37,23 @@ namespace Hotkey_Pad_WPF
             int rowButtonNum = Settings.Default.rowButtonNum;
             int colButtonNum = Settings.Default.colButtonNum;
 
+            //populate buttonData
+            if (Settings.Default.buttonData.Equals(""))
+            { //populate us with some basic data
+                for (int i = 0; i < rowButtonNum; i++)
+                {
+                    Pad.buttonDataList.Add(new List<ButtonData>());
+                    for (int j = 0; j < colButtonNum; j++)
+                    {
+                        Pad.buttonDataList[i].Add(new ButtonData());
+                    }
+                }
+            }
+            else
+            { //populate with saved data
+                Pad.buttonDataList = JsonConvert.DeserializeObject<List<List<ButtonData>>>(Settings.Default.buttonData);
+            }
+
             InitializeComponent();
             tb_buttonPadding.Text = buttonPadding.ToString();
             tb_rowButtonNum.Text = rowButtonNum.ToString();
@@ -59,20 +76,7 @@ namespace Hotkey_Pad_WPF
             }
             catch { }
 
-            //populate buttonData
-            if (Settings.Default.buttonData.Equals(""))
-            { //populate us with some basic data
-                for (int i = 0; i < rowButtonNum; i++) {
-                    Pad.buttonDataList.Add(new List<ButtonData>());
-                    for (int j = 0; j < colButtonNum; j++)
-                    {
-                        Pad.buttonDataList[i].Add(new ButtonData());
-                    }
-                }
-            } else
-            { //populate with saved data
-                Pad.buttonDataList = JsonConvert.DeserializeObject<List<List<ButtonData>>>(Settings.Default.buttonData);
-            }
+            
 
 
             foreach (TabItem tabItem in tabControl1.Items)
