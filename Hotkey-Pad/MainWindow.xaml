@@ -37,7 +37,7 @@
                             <Label Content="Port:" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top"/>
                             <TextBox x:Name="tbAddConnectionPort" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="10000" VerticalAlignment="Top" Width="120" Margin="49,45,0,0"/>
                             <TextBox x:Name="tbAddConnectionIP" HorizontalAlignment="Left" Height="23" Margin="49,14,0,0" TextWrapping="Wrap" Text="127.0.0.1" VerticalAlignment="Top" Width="120"/>
-                            <Button x:Name="btnAddConnection" Content="Add Connection" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="49,73,0,0" RenderTransformOrigin="8.315,6.388" Click="btnAddConnection_Click"/>
+                            <Button x:Name="btnAddConnection" Content="Add Connection" HorizontalAlignment="Left" VerticalAlignment="Top" Width="91" Margin="49,73,0,0" RenderTransformOrigin="8.315,6.388" Click="btnAddConnection_Click"/>
                         </Grid>
                     </GroupBox>
                     <Button x:Name="btnRemoveCheckedConnections" HorizontalAlignment="Left" VerticalAlignment="Top" Width="109" Margin="436,279,0,0" Height="61" Click="btnRemoveCheckedConnections_Click">
