@@ -1,4 +1,4 @@
-﻿using Hotkey_Pad;
+using Hotkey_Pad;
 using Hotkey_Pad.Properties;
 using Newtonsoft.Json;
 using System;
@@ -224,6 +224,42 @@ namespace Hotkey_Pad_WPF
             if (int.TryParse(tb.Text, out rowButtonNum))
             {
                 Settings.Default.rowButtonNum = rowButtonNum;
+                if (this.pad != null) {
+                    if (rowButtonNum > this.pad.rowButtonNum)
+                    {   // growing the list.
+                        // increase the row by some number of increased rows.
+                        for (int i = this.pad.colButtonNum; i < rowButtonNum; i++)
+                        {
+                            Pad.buttonDataList.Add(new List<ButtonData>());
+                            for (int j = 0; j < rowButtonNum; j++)
+                            {
+                                Pad.buttonDataList[i].Add(new ButtonData());
+                            }
+                        }
+                    }
+                    else if (rowButtonNum < this.pad.rowButtonNum)
+                    {
+                        for (int i = rowButtonNum; i > this.pad.rowButtonNum; i--)
+                        {   // shrinking the list.
+                            // if the entire column is empty delete the entire row. if not dont. 
+                            bool isEmpty = true;
+                            foreach (ButtonData data in Pad.buttonDataList[i]) 
+                            {
+                                if (!data.CompareTo(new ButtonData())) isEmpty = false;
+                            }
+                            if (isEmpty)
+                            {
+                                Pad.buttonDataList.RemoveAt(i);
+                            } 
+                            else
+                            {
+                                break;
+                            }
+                        }
+                    }
+                }
+
+
                 if (padEditor != null && pad != null)
                 {
                     this.padEditor.rowButtonNum = rowButtonNum;
