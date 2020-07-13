@@ -34,6 +34,8 @@ namespace Hotkey_Pad
             tbHotkey.Text = this.buttonData.HotkeyCombo.ToString();
             cbCmdEnable.IsChecked = this.buttonData.CmdExeEnable;
             tbCmd.Text = this.buttonData.CmdExeCommand;
+            tbColorBackground.Text = ColorHandler.convertRGBA(this.buttonData.ButtonBackgroundColor);
+            tbColorForeground.Text = ColorHandler.convertRGBA(this.buttonData.ButtonForegroundColor);
 
             cbCurrentConnection.Items.Add(""); //adds a blank item so you can reset the button to blankness
 
@@ -44,6 +46,7 @@ namespace Hotkey_Pad
             cbCurrentConnection.Text = this.buttonData.Connection;
         }
 
+        
 
         private void TextBox_PreviewKeyDown(object sender, KeyEventArgs e)
         {
@@ -108,6 +111,21 @@ namespace Hotkey_Pad
             this.buttonData.CmdExeCommand = tbCmd.Text;
             this.buttonData.Connection = cbCurrentConnection.Text;
             this.pad.regenButtons();
+        }
+
+        private void tbColorForeground_LostFocus(object sender, RoutedEventArgs e)
+        {
+            string rgb = tbColorForeground.Text;
+            rgb = ColorHandler.CheckRGBA(rgb);
+            this.buttonData.ButtonForegroundColor = rgb;
+
+        }
+
+        private void tbColorBackground_LostFocus(object sender, RoutedEventArgs e)
+        {
+            string rgb = tbColorBackground.Text;
+            rgb = ColorHandler.CheckRGBA(rgb);
+            this.buttonData.ButtonBackgroundColor = rgb;
         }
     }
 }

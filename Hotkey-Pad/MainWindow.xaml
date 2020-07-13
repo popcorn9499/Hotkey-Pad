@@ -11,7 +11,7 @@
             <TabItem x:Name="tabItemPad" Header="Pad" Background="#FF210FD4" BorderBrush="#FF210FD4">
                 <Grid HorizontalAlignment="Left" Height="387" VerticalAlignment="Top" Width="784" Cursor="None" Margin="0,2,0,0"/>
             </TabItem>
-            <TabItem x:Name="tabItemPadEditor" Header="Pad Editor" Background="#FF210FD4" Height="22" VerticalAlignment="Top">
+            <TabItem x:Name="tabItemPadEditor" Header="Pad Editor" Background="#FFAD35F1" Height="22" VerticalAlignment="Top">
                 <Grid HorizontalAlignment="Left" Height="387" VerticalAlignment="Top" Width="784" Cursor="None" Margin="0,2,0,0"/>
             </TabItem>
             <TabItem x:Name="tabItemSettings" Header="Settings" Background="#FF210FD4" Height="22" VerticalAlignment="Top" RenderTransformOrigin="1.199,1.568" Margin="-1,0,-45,0">

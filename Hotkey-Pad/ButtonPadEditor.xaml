@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="ButtonPadEditor" Height="320.876" Width="749.064" Closing="Window_Closing">
     <Grid>
-        <ComboBox x:Name="cbCurrentConnection" HorizontalAlignment="Left" Margin="454,57,0,0" VerticalAlignment="Top" Width="243" Height="39" Loaded="ComboBox_Loaded"/>
+        <ComboBox x:Name="cbCurrentConnection" HorizontalAlignment="Left" Margin="454,45,0,0" VerticalAlignment="Top" Width="243" Height="39" Loaded="ComboBox_Loaded"/>
         <GroupBox Header="Hotkey" HorizontalAlignment="Left" Height="100" Margin="0,180,0,0" VerticalAlignment="Top" Width="390">
             <Grid Height="89" Margin="0,-6,-2,-6" VerticalAlignment="Top">
                 <TextBox x:Name="tbHotkey" HorizontalAlignment="Left" Height="41" Margin="10,44,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="352" PreviewKeyDown="TextBox_PreviewKeyDown"/>
@@ -20,9 +20,17 @@
                 <CheckBox x:Name="cbCmdEnable" Content="Enabled" HorizontalAlignment="Left" Margin="10,18,0,0" VerticalAlignment="Top"/>
             </Grid>
         </GroupBox>
-        <Label Content="Connection&#xD;&#xA;" HorizontalAlignment="Left" Margin="454,22,0,0" VerticalAlignment="Top" Width="243" Height="35"/>
+        <Label Content="Connection&#xD;&#xA;" HorizontalAlignment="Left" Margin="454,10,0,0" VerticalAlignment="Top" Width="243" Height="35"/>
         <GroupBox Header="Button Text&#xD;&#xA;" HorizontalAlignment="Left" Height="129" Margin="10,10,0,0" VerticalAlignment="Top" Width="110">
             <TextBox x:Name="tbBtnName" HorizontalAlignment="Left" Height="98" Margin="0,-6,-2,-2" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="100"/>
+        </GroupBox>
+        <GroupBox Header="RGBA Button Color" HorizontalAlignment="Left" Height="86" Margin="136,10,0,0" VerticalAlignment="Top" Width="219">
+            <Grid HorizontalAlignment="Left" Height="107" VerticalAlignment="Top" Width="209" Margin="0,0,-2,-1">
+                <TextBox x:Name="tbColorBackground" HorizontalAlignment="Left" Height="23" Margin="79,7,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" LostFocus="tbColorBackground_LostFocus"/>
+                <TextBox x:Name="tbColorForeground" HorizontalAlignment="Left" Height="23" Margin="79,39,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" LostFocus="tbColorForeground_LostFocus"/>
+                <Label Content="Background:" HorizontalAlignment="Left" Margin="0,7,0,0" VerticalAlignment="Top" Height="23"/>
+                <Label Content="Foreground:&#xD;&#xA;&#xD;&#xA;" HorizontalAlignment="Left" Margin="1,35,0,0" VerticalAlignment="Top"/>
+            </Grid>
         </GroupBox>
 
     </Grid>
