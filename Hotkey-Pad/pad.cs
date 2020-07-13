@@ -10,6 +10,8 @@ using System.Windows.Input;
 using Henooh.DeviceEmulator;
 using Henooh.DeviceEmulator.Native;
 using System.Windows.Input;
+using System.Collections;
+using Newtonsoft.Json;
 
 namespace Hotkey_Pad
 {
@@ -75,12 +77,16 @@ namespace Hotkey_Pad
             }
         }
 
-        public virtual async void ButtonEditor_Click(object sender, RoutedEventArgs e, ButtonData buttonData)
+        public virtual void ButtonEditor_Click(object sender, RoutedEventArgs e, ButtonData buttonData)
         {
             //MessageBox.Show("HELLO)O");
             if (buttonData.CmdExeEnable)
             {
+                ConnectionManager connection = ConnectionManager.findConnection(buttonData.Connection);
+                ArrayList payloadList = new ArrayList { "SendCommand", buttonData.CmdExeCommand };
 
+                string payload = JsonConvert.SerializeObject(payloadList);
+                connection.Writer(payload);
             }
             if (buttonData.HotkeyEnable)
             {
@@ -111,7 +117,12 @@ namespace Hotkey_Pad
                     }
                 } else
                 {
+                    ConnectionManager connection = ConnectionManager.findConnection(buttonData.Connection);
+                    ArrayList payloadList = new ArrayList {"SendKey", buttonData.HotkeyCombo.EvdevKeyModifiers, buttonData.HotkeyCombo.EvdevKey};
 
+                    string payload = JsonConvert.SerializeObject(payloadList);
+                    connection.Writer(payload);
+                    
                 }
 
             }
