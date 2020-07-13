@@ -46,7 +46,6 @@ namespace Hotkey_Pad
 
         public VirtualKeyCode ModifierKeyToVirtualKey()
         {
-
             if (modifiers.HasFlag(ModifierKeys.Control))
                 return VirtualKeyCode.CONTROL;
             if (modifiers.HasFlag(ModifierKeys.Shift))
