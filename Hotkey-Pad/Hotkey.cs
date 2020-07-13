@@ -37,6 +37,8 @@ namespace Hotkey_Pad
         {
             this.key = key;
             this.modifiers = modifiers;
+            this.EvdevKey = KeyCodeTranslation.findEvdevKey(this.key);
+            this.EvdevKeyModifiers = KeyCodeTranslation.findEvdevModifierKeys(this.modifiers).ToArray();
         }
 
         public VirtualKeyCode KeyToVirtualKey() {
