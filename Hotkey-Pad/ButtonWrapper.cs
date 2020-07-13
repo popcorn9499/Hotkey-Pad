@@ -55,12 +55,13 @@ namespace Hotkey_Pad
 
         private Brush generateBrush(string rgbString)
         {
-            byte R=0, G=0, B=0;
+            byte R=0, G=0, B=0, A=0;
             string[] rgbStringList = rgbString.Split(',');
             R = (byte)int.Parse(rgbStringList[0]);
             B = (byte)int.Parse(rgbStringList[1]);
             G = (byte)int.Parse(rgbStringList[2]);
-            Brush payload = new SolidColorBrush(Color.FromRgb(R, G, B));
+            A = (byte)int.Parse(rgbStringList[3]);
+            Brush payload = new SolidColorBrush(Color.FromArgb(A,R, G, B));
             return payload;
         }
 

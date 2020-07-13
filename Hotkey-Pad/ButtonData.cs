@@ -15,8 +15,8 @@ namespace Hotkey_Pad
         public string CmdExeCommand { get; set; } = "";
         public bool HotkeyEnable { get; set; } = false;
         public Hotkey HotkeyCombo { get; set; } = new Hotkey();
-        public string ButtonBackgroundColor { get; set; } = "";
-        public string ButtonForegroundColor { get; set; } = "";
+        public string ButtonBackgroundColor { get; set; } = "123,37,209,255";
+        public string ButtonForegroundColor { get; set; } = "255,255,255,255";
 
 
         public bool CompareTo(ButtonData buttonData2)
