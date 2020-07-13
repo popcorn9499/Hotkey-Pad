@@ -15,6 +15,8 @@ namespace Hotkey_Pad
         public string CmdExeCommand { get; set; } = "";
         public bool HotkeyEnable { get; set; } = false;
         public Hotkey HotkeyCombo { get; set; } = new Hotkey();
+        public string ButtonBackgroundColor { get; set; } = "";
+        public string ButtonForegroundColor { get; set; } = "";
 
 
         public bool CompareTo(ButtonData buttonData2)
@@ -25,6 +27,8 @@ namespace Hotkey_Pad
             if (!this.CmdExeCommand.Equals(buttonData2.CmdExeCommand)) return false;
             if (this.HotkeyEnable != buttonData2.HotkeyEnable) return false;
             if (!this.HotkeyCombo.Equals(buttonData2.HotkeyCombo)) return false;
+            if (!this.ButtonBackgroundColor.Equals(buttonData2.ButtonBackgroundColor)) return false;
+            if (!this.ButtonForegroundColor.Equals(buttonData2.ButtonForegroundColor)) return false;
             return true;
         }
     }
