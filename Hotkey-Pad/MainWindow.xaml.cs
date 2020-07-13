@@ -1,4 +1,4 @@
-using Hotkey_Pad;
+﻿using Hotkey_Pad;
 using Hotkey_Pad.Properties;
 using Newtonsoft.Json;
 using System;
@@ -125,22 +125,25 @@ namespace Hotkey_Pad_WPF
             if (int.TryParse(tb.Text, out colButtonNum))
             {
                 Settings.Default.colButtonNum = colButtonNum;
-                
-                /*if (colButtonNum > this.pad.colButtonNum)
-                {
-                    *//*for (int i = this.pad.colButtonNum+1; i < colButtonNum; i++)
-                    {
-                        Pad.buttonDataList.Add(new List<ButtonData>());
-                        for (int j = 0; j < colButtonNum; j++)
-                        {
-                            Pad.buttonDataList[i].Add(new ButtonData());
-                        }
-                    }*//*
-                } 
-                else if (colButtonNum < this.pad.colButtonNum)
-                {
 
-                }*/
+                foreach (List<ButtonData> data in Pad.buttonDataList)
+                {
+                    if (colButtonNum > data.Count)
+                    { //increase number of columns
+                        for (int i = data.Count; i < colButtonNum; i++)
+                        {
+                            data.Add(new ButtonData());
+                        }
+                    }
+                    else if (colButtonNum < data.Count)
+                    { //decrease number of columns
+
+                        for (int i = data.Count - 1; i > colButtonNum; i--)
+                        {
+                            if (data[i].CompareTo(new ButtonData())) data.RemoveAt(i);
+                        }
+                    }
+                }
                
                 if (padEditor != null && pad != null)
                 {
