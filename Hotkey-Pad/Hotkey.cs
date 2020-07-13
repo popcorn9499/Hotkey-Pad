@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -55,6 +55,13 @@ namespace Hotkey_Pad
             if (modifiers.HasFlag(ModifierKeys.Windows))
                 return VirtualKeyCode.RWIN;
             throw new NoModifier();
+        }
+
+        public bool Equals(Hotkey obj)
+        {
+            if (!obj.key.Equals(this.key)) return false;
+            if (!obj.modifiers.Equals(this.modifiers)) return false;
+            return true;
         }
 
         public override string ToString()

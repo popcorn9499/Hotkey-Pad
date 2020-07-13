@@ -225,10 +225,10 @@ namespace Hotkey_Pad_WPF
             {
                 Settings.Default.rowButtonNum = rowButtonNum;
                 if (this.pad != null) {
-                    if (rowButtonNum > this.pad.rowButtonNum)
+                    if (rowButtonNum > Pad.buttonDataList.Count)
                     {   // growing the list.
                         // increase the row by some number of increased rows.
-                        for (int i = this.pad.colButtonNum; i < rowButtonNum; i++)
+                        for (int i = Pad.buttonDataList.Count; i < rowButtonNum; i++)
                         {
                             Pad.buttonDataList.Add(new List<ButtonData>());
                             for (int j = 0; j < rowButtonNum; j++)
@@ -237,15 +237,23 @@ namespace Hotkey_Pad_WPF
                             }
                         }
                     }
-                    else if (rowButtonNum < this.pad.rowButtonNum)
+                    else if (rowButtonNum < Pad.buttonDataList.Count)
                     {
-                        for (int i = rowButtonNum; i > this.pad.rowButtonNum; i--)
+                        for (int i = Pad.buttonDataList.Count-1; i > rowButtonNum; i--)
                         {   // shrinking the list.
                             // if the entire column is empty delete the entire row. if not dont. 
                             bool isEmpty = true;
-                            foreach (ButtonData data in Pad.buttonDataList[i]) 
+                            foreach (ButtonData data in Pad.buttonDataList[i])
                             {
-                                if (!data.CompareTo(new ButtonData())) isEmpty = false;
+                                if (!data.CompareTo(new ButtonData()))
+                                {
+                                    isEmpty = false;
+
+                                }
+                                else
+                                {
+                                    isEmpty = isEmpty;
+                                }
                             }
                             if (isEmpty)
                             {

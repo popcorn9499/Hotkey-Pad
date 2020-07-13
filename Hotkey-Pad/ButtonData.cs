@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Dynamic;
 using System.Linq;
@@ -24,7 +24,7 @@ namespace Hotkey_Pad
             if (this.CmdExeEnable != buttonData2.CmdExeEnable) return false;
             if (!this.CmdExeCommand.Equals(buttonData2.CmdExeCommand)) return false;
             if (this.HotkeyEnable != buttonData2.HotkeyEnable) return false;
-            if (this.HotkeyCombo != buttonData2.HotkeyCombo) return false;
+            if (!this.HotkeyCombo.Equals(buttonData2.HotkeyCombo)) return false;
             return true;
         }
     }
