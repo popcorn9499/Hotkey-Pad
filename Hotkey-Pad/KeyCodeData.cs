@@ -13,10 +13,10 @@ namespace Hotkey_Pad
         public Key Keycode { get; }
         public int EvdevScanCodeData { get;}
 
-        public KeyCodeData(string Character, int keyCode, int evdevKey)
+        public KeyCodeData(string Character, Key keyCode, int evdevKey)
         {
             this.Character = Character;
-            this.Keycode = (Key)keyCode;
+            this.Keycode = keyCode;
             this.EvdevScanCodeData = evdevKey;
         }
     }
