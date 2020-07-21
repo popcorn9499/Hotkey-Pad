@@ -98,13 +98,6 @@ namespace Hotkey_Pad_WPF
             MessageBox.Show(x.Margin.ToString());
         }
 
-        private void window1_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-        {
-            var relativePosition = e.GetPosition(this);
-            var point = PointToScreen(relativePosition);
-            MessageBox.Show(point.ToString());
-        }
-
         private void window1_SizeChanged(object sender, SizeChangedEventArgs e)
         {
             double newWindowHeight = e.NewSize.Height;
