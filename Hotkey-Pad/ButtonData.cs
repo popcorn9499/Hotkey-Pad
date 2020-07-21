@@ -31,6 +31,18 @@ namespace Hotkey_Pad
             if (!this.ButtonForegroundColor.Equals(buttonData2.ButtonForegroundColor)) return false;
             return true;
         }
+
+        public void Reset()
+        {
+            this.Connection = "";
+            this.BtnText = "Button Name";
+            this.CmdExeCommand = "";
+            this.CmdExeEnable = false;
+            this.HotkeyEnable = false;
+            this.HotkeyCombo = new Hotkey();
+            this.ButtonBackgroundColor = "123,37,209,255";
+            this.ButtonForegroundColor = "255,255,255,255";
+        }
     }
 }
 

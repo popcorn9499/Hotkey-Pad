@@ -29,6 +29,11 @@ namespace Hotkey_Pad
 
             InitializeComponent();
 
+            PostInitialize();
+        }
+
+        private void PostInitialize()
+        {
             tbBtnName.Text = this.buttonData.BtnText;
             cbHotkeyEnable.IsChecked = this.buttonData.HotkeyEnable;
             tbHotkey.Text = this.buttonData.HotkeyCombo.ToString();
@@ -126,6 +131,12 @@ namespace Hotkey_Pad
             string rgb = tbColorBackground.Text;
             rgb = ColorHandler.CheckRGBA(rgb);
             this.buttonData.ButtonBackgroundColor = rgb;
+        }
+
+        private void btn_reset_Click(object sender, RoutedEventArgs e)
+        {
+            this.buttonData.Reset();
+            PostInitialize();
         }
     }
 }
