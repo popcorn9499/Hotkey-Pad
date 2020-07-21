@@ -25,8 +25,12 @@ class main():
     async def remoteKeystrokeExecute(self,data):
         data = json.loads(data)
         if data[0] == "SendKey":
-            keys= [data[1]] + [data[2]]
             print(data)
+            keys = [data[2]]
+            for i in data[1]:
+                keys.append(i)
+            keys.reverse()
+            print(keys)
             key = KeyPressHandler.KeyPress(keys=keys)
             await key.keyPress(keyState=KeyPressHandler.KEY_STATE.KEY_TOGGLE,pressDuration=0.1)
 
