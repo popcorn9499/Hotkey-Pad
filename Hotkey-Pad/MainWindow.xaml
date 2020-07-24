@@ -1,4 +1,4 @@
-<Window x:Name="window1" x:Class="Hotkey_Pad_WPF.MainWindow"
+<Window x:Name="mainWindow" x:Class="Hotkey_Pad_WPF.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -43,6 +43,27 @@
                     <Button x:Name="btnRemoveCheckedConnections" HorizontalAlignment="Left" VerticalAlignment="Top" Width="109" Margin="436,279,0,0" Height="61" Click="btnRemoveCheckedConnections_Click">
                         <TextBlock TextWrapping="Wrap">Remove Checked Connections</TextBlock>
                     </Button>
+                    <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                    <GroupBox Header="GroupBox" HorizontalAlignment="Left" Height="248" Margin="5,124,0,0" VerticalAlignment="Top" Width="393">
+                        <Grid HorizontalAlignment="Left" Height="238" VerticalAlignment="Top" Width="393" Margin="0,0,-12,-13">
+                            <TextBox x:Name="tb_windowBackground" HorizontalAlignment="Left" Height="23" Margin="133,10,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.947,0.773" LostFocus="tb_windowBackground_LostFocus"/>
+                            <Label Content="Window Background:" HorizontalAlignment="Left" Margin="10,7,0,0" VerticalAlignment="Top"/>
+                            <Label Content="Window Forground:" HorizontalAlignment="Left" Margin="10,33,0,0" VerticalAlignment="Top"/>
+                            <Label Content="Pad Tab Background:" HorizontalAlignment="Left" Margin="10,59,0,0" VerticalAlignment="Top"/>
+                            <Label Content="Pad Tab Foreground:" HorizontalAlignment="Left" Margin="10,85,0,0" VerticalAlignment="Top"/>
+                            <Label Content="PadEdit Tab Background:" HorizontalAlignment="Left" Margin="12,111,0,0" VerticalAlignment="Top"/>
+                            <Label Content="PadEdit Tab Foreground:" HorizontalAlignment="Left" Margin="12,134,0,0" VerticalAlignment="Top"/>
+                            <Label Content="Settings Tab Background:" HorizontalAlignment="Left" Margin="12,160,0,0" VerticalAlignment="Top"/>
+                            <Label Content="Settings Tab Foreground:" HorizontalAlignment="Left" Margin="12,186,0,0" VerticalAlignment="Top"/>
+                            <TextBox x:Name="tb_windowForeground" HorizontalAlignment="Left" Height="23" Margin="133,33,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" LostFocus="tb_windowForeground_LostFocus"/>
+                            <TextBox x:Name="tb_padTabBackground" HorizontalAlignment="Left" Height="23" Margin="133,60,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" LostFocus="tb_padTabBackground_LostFocus"/>
+                            <TextBox x:Name="tb_padTabForeground" HorizontalAlignment="Left" Height="23" Margin="133,85,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" LostFocus="tb_padTabForeground_LostFocus"/>
+                            <TextBox x:Name="tb_padEditorTabBackground" HorizontalAlignment="Left" Height="23" Margin="150,111,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" LostFocus="tb_padEditorTabBackground_LostFocus"/>
+                            <TextBox x:Name="tb_padEditorTabForeground" HorizontalAlignment="Left" Height="23" Margin="150,137,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" LostFocus="tb_padEditorTabForeground_LostFocus"/>
+                            <TextBox x:Name="tb_settingsTabBackground" HorizontalAlignment="Left" Height="23" Margin="150,163,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" LostFocus="tb_settingsTabBackground_LostFocus"/>
+                            <TextBox x:Name="tb_settingsTabForeground" HorizontalAlignment="Left" Height="23" Margin="150,189,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" LostFocus="tb_settingsTabForeground_LostFocus"/>
+                        </Grid>
+                    </GroupBox>
                 </Grid>
             </TabItem>
         </TabControl>

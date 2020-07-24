@@ -36,8 +36,8 @@ namespace Hotkey_Pad
             this.thisButton.Cursor = Cursors.Arrow;
             this.thisButton.Click += Button_Click;
 
-            this.thisButton.Background = generateBrush(this.buttonData.ButtonBackgroundColor);
-            this.thisButton.Foreground = generateBrush(this.buttonData.ButtonForegroundColor);
+            this.thisButton.Background = ColorHandler.generateBrush(this.buttonData.ButtonBackgroundColor);
+            this.thisButton.Foreground = ColorHandler.generateBrush(this.buttonData.ButtonForegroundColor);
             /*
             if (backColor == null) backColor = Color.FromArgb(0,0,0,0);
             if (foreColor == null) foreColor = Color.FromRgb(255,255,255);
@@ -53,17 +53,7 @@ namespace Hotkey_Pad
             */
         }
 
-        private Brush generateBrush(string rgbString)
-        {
-            byte R=0, G=0, B=0, A=0;
-            string[] rgbStringList = rgbString.Split(',');
-            R = (byte)int.Parse(rgbStringList[0]);
-            G = (byte)int.Parse(rgbStringList[1]);
-            B = (byte)int.Parse(rgbStringList[2]);
-            A = (byte)int.Parse(rgbStringList[3]);
-            Brush payload = new SolidColorBrush(Color.FromArgb(A ,R, G, B));
-            return payload;
-        }
+ 
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {

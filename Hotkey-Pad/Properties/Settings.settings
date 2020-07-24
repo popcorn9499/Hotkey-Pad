@@ -17,5 +17,29 @@
     <Setting Name="buttonData" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
+    <Setting Name="winBackground" Type="System.String" Scope="User">
+      <Value Profile="(Default)">16,1,166,255</Value>
+    </Setting>
+    <Setting Name="winForeground" Type="System.String" Scope="User">
+      <Value Profile="(Default)">255,255,255,255</Value>
+    </Setting>
+    <Setting Name="padTabBackground" Type="System.String" Scope="User">
+      <Value Profile="(Default)">16,1,166,255</Value>
+    </Setting>
+    <Setting Name="padTabForeground" Type="System.String" Scope="User">
+      <Value Profile="(Default)">255,255,255,255</Value>
+    </Setting>
+    <Setting Name="padEditTabBackground" Type="System.String" Scope="User">
+      <Value Profile="(Default)">173,53,241,255</Value>
+    </Setting>
+    <Setting Name="padEditorTabForeground" Type="System.String" Scope="User">
+      <Value Profile="(Default)">255,255,255,255</Value>
+    </Setting>
+    <Setting Name="settingsTabBackground" Type="System.String" Scope="User">
+      <Value Profile="(Default)">16,1,166,255</Value>
+    </Setting>
+    <Setting Name="settingsTabForeground" Type="System.String" Scope="User">
+      <Value Profile="(Default)">255,255,255,255</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

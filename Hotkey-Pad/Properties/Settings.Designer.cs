@@ -81,5 +81,101 @@ namespace Hotkey_Pad.Properties {
                 this["buttonData"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("16,1,166,255")]
+        public string winBackground {
+            get {
+                return ((string)(this["winBackground"]));
+            }
+            set {
+                this["winBackground"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("255,255,255,255")]
+        public string winForeground {
+            get {
+                return ((string)(this["winForeground"]));
+            }
+            set {
+                this["winForeground"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("16,1,166,255")]
+        public string padTabBackground {
+            get {
+                return ((string)(this["padTabBackground"]));
+            }
+            set {
+                this["padTabBackground"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("255,255,255,255")]
+        public string padTabForeground {
+            get {
+                return ((string)(this["padTabForeground"]));
+            }
+            set {
+                this["padTabForeground"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("173,53,241,255")]
+        public string padEditTabBackground {
+            get {
+                return ((string)(this["padEditTabBackground"]));
+            }
+            set {
+                this["padEditTabBackground"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("255,255,255,255")]
+        public string padEditorTabForeground {
+            get {
+                return ((string)(this["padEditorTabForeground"]));
+            }
+            set {
+                this["padEditorTabForeground"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("16,1,166,255")]
+        public string settingsTabBackground {
+            get {
+                return ((string)(this["settingsTabBackground"]));
+            }
+            set {
+                this["settingsTabBackground"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("255,255,255,255")]
+        public string settingsTabForeground {
+            get {
+                return ((string)(this["settingsTabForeground"]));
+            }
+            set {
+                this["settingsTabForeground"] = value;
+            }
+        }
     }
 }

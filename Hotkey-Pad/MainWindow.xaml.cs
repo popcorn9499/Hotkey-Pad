@@ -37,6 +37,8 @@ namespace Hotkey_Pad_WPF
             int rowButtonNum = Settings.Default.rowButtonNum;
             int colButtonNum = Settings.Default.colButtonNum;
 
+
+
             //populate buttonData
             if (Settings.Default.buttonData.Equals(""))
             { //populate us with some basic data
@@ -88,6 +90,27 @@ namespace Hotkey_Pad_WPF
                     this.padEditor = new EditorPad(tabItem, buttonPadding, rowButtonNum, colButtonNum);
                 }
             }
+
+
+            //recolor the window
+            mainWindow.Background = ColorHandler.generateBrush(Settings.Default.winBackground);
+            mainWindow.Foreground = ColorHandler.generateBrush(Settings.Default.winForeground);
+            tabItemPad.Background = ColorHandler.generateBrush(Settings.Default.padTabBackground);
+            tabItemPad.Foreground = ColorHandler.generateBrush(Settings.Default.padTabForeground);
+            tabItemPadEditor.Background = ColorHandler.generateBrush(Settings.Default.padEditTabBackground);
+            tabItemPadEditor.Foreground = ColorHandler.generateBrush(Settings.Default.padEditorTabForeground);
+            tabItemSettings.Background = ColorHandler.generateBrush(Settings.Default.settingsTabBackground);
+            tabItemSettings.Foreground = ColorHandler.generateBrush(Settings.Default.settingsTabForeground);
+
+            tb_windowBackground.Text = Settings.Default.winBackground;
+            tb_windowForeground.Text = Settings.Default.winForeground;
+            tb_padTabBackground.Text = Settings.Default.padTabBackground;
+            tb_padTabForeground.Text = Settings.Default.padTabForeground;
+            tb_padEditorTabBackground.Text = Settings.Default.padEditTabBackground;
+            tb_padEditorTabForeground.Text = Settings.Default.padEditorTabForeground;
+            tb_settingsTabBackground.Text = Settings.Default.settingsTabBackground;
+            tb_settingsTabForeground.Text = Settings.Default.settingsTabForeground;
+
         }
 
 
@@ -301,6 +324,78 @@ namespace Hotkey_Pad_WPF
             } else {
                 MessageBox.Show("Please Make this an Integer!!!");
             }
+        }
+
+        private void tb_windowBackground_LostFocus(object sender, RoutedEventArgs e)
+        {
+            TextBox tb = (TextBox)sender;
+            string rgb = tb.Text;
+            rgb = ColorHandler.CheckRGBA(rgb);
+            mainWindow.Background = ColorHandler.generateBrush(rgb);
+            Settings.Default.winBackground = rgb;
+        }
+
+        private void tb_windowForeground_LostFocus(object sender, RoutedEventArgs e)
+        {
+            TextBox tb = (TextBox)sender;
+            string rgb = tb.Text;
+            rgb = ColorHandler.CheckRGBA(rgb);
+            mainWindow.Foreground = ColorHandler.generateBrush(rgb);
+            Settings.Default.winForeground = rgb;
+        }
+
+        private void tb_padTabBackground_LostFocus(object sender, RoutedEventArgs e)
+        {
+            TextBox tb = (TextBox)sender;
+            string rgb = tb.Text;
+            rgb = ColorHandler.CheckRGBA(rgb);
+            tabItemPad.Background = ColorHandler.generateBrush(rgb);
+            Settings.Default.padTabBackground = rgb;
+        }
+
+        private void tb_padTabForeground_LostFocus(object sender, RoutedEventArgs e)
+        {
+            TextBox tb = (TextBox)sender;
+            string rgb = tb.Text;
+            rgb = ColorHandler.CheckRGBA(rgb);
+            tabItemPad.Foreground = ColorHandler.generateBrush(rgb);
+            Settings.Default.padTabForeground = rgb;
+        }
+
+        private void tb_padEditorTabBackground_LostFocus(object sender, RoutedEventArgs e)
+        {
+            TextBox tb = (TextBox)sender;
+            string rgb = tb.Text;
+            rgb = ColorHandler.CheckRGBA(rgb);
+            tabItemPadEditor.Background = ColorHandler.generateBrush(rgb);
+            Settings.Default.padEditTabBackground = rgb;
+        }
+
+        private void tb_padEditorTabForeground_LostFocus(object sender, RoutedEventArgs e)
+        {
+            TextBox tb = (TextBox)sender;
+            string rgb = tb.Text;
+            rgb = ColorHandler.CheckRGBA(rgb);
+            tabItemPadEditor.Foreground = ColorHandler.generateBrush(rgb);
+            Settings.Default.padEditorTabForeground = rgb;
+        }
+
+        private void tb_settingsTabBackground_LostFocus(object sender, RoutedEventArgs e)
+        {
+            TextBox tb = (TextBox)sender;
+            string rgb = tb.Text;
+            rgb = ColorHandler.CheckRGBA(rgb);
+            tabItemSettings.Background = ColorHandler.generateBrush(rgb);
+            Settings.Default.settingsTabBackground = rgb;
+        }
+
+        private void tb_settingsTabForeground_LostFocus(object sender, RoutedEventArgs e)
+        {
+            TextBox tb = (TextBox)sender;
+            string rgb = tb.Text;
+            rgb = ColorHandler.CheckRGBA(rgb);
+            tabItemSettings.Foreground = ColorHandler.generateBrush(rgb);
+            Settings.Default.settingsTabForeground = rgb;
         }
     }
 }

@@ -123,7 +123,6 @@ namespace Hotkey_Pad
             string rgb = tbColorForeground.Text;
             rgb = ColorHandler.CheckRGBA(rgb);
             this.buttonData.ButtonForegroundColor = rgb;
-
         }
 
         private void tbColorBackground_LostFocus(object sender, RoutedEventArgs e)
