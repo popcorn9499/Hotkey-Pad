@@ -234,6 +234,24 @@ namespace Hotkey_Pad_WPF
 
         }
 
+        private void tabControl1_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            double newWindowHeight = e.NewSize.Height;
+            double newWindowWidth = e.NewSize.Width;
+            double prevWindowHeight = e.PreviousSize.Height;
+            double prevWindowWidth = e.PreviousSize.Width;
+            if (prevWindowHeight == 0) return;
+            if (prevWindowWidth == 0) return;
+            gridPad.Height = newWindowHeight * (gridPad.Height / prevWindowHeight);
+            gridPad.Width = newWindowWidth * (gridPad.Width / prevWindowWidth);
+
+            if (prevWindowHeight == 0) return;
+            if (prevWindowWidth == 0) return;
+            gridPadEditor.Height = newWindowHeight * (gridPadEditor.Height / prevWindowHeight);
+            gridPadEditor.Width = newWindowWidth * (gridPadEditor.Width / prevWindowWidth);
+
+        }
+
         private void tb_rowButtonNum_TextChanged(object sender, TextChangedEventArgs e)
         { //saves the setting change and adds it to the pad
             int rowButtonNum;

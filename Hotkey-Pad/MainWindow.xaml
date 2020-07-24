@@ -7,12 +7,12 @@
         mc:Ignorable="d"
         Title="Hotkey-Pad" Height="450" Width="800" Background="#FF1001A6" SizeChanged="window1_SizeChanged" Margin="0" Closing="window1_Closing" Loaded="window1_Loaded">
     <Grid>
-        <TabControl x:Name="tabControl1" HorizontalAlignment="Left" Height="409" VerticalAlignment="Top" Width="782" Background="{x:Null}" SelectionChanged="tabControl1_SelectionChanged">
+        <TabControl x:Name="tabControl1" HorizontalAlignment="Left" Height="409" VerticalAlignment="Top" Width="782" Background="{x:Null}" SelectionChanged="tabControl1_SelectionChanged" SizeChanged="tabControl1_SizeChanged">
             <TabItem x:Name="tabItemPad" Header="Pad" Background="#FF210FD4" BorderBrush="#FF210FD4">
-                <Grid HorizontalAlignment="Left" Height="387" VerticalAlignment="Top" Width="784" Cursor="None" Margin="0,2,0,0"/>
+                <Grid x:Name="gridPad" HorizontalAlignment="Left" Height="387" VerticalAlignment="Top" Width="784" Cursor="None" Margin="0,2,-8,0"/>
             </TabItem>
             <TabItem x:Name="tabItemPadEditor" Header="Pad Editor" Background="#FFAD35F1" Height="22" VerticalAlignment="Top">
-                <Grid HorizontalAlignment="Left" Height="387" VerticalAlignment="Top" Width="784" Cursor="None" Margin="0,2,0,0"/>
+                <Grid x:Name="gridPadEditor" HorizontalAlignment="Left" Height="387" VerticalAlignment="Top" Width="784" Cursor="None" Margin="0,0,-8,-8"/>
             </TabItem>
             <TabItem x:Name="tabItemSettings" Header="Settings" Background="#FF210FD4" Height="22" VerticalAlignment="Top" RenderTransformOrigin="1.199,1.568" Margin="-1,0,-45,0">
                 <Grid HorizontalAlignment="Left" Height="382" Margin="0,0,0,-3" VerticalAlignment="Top" Width="776" Background="White">
