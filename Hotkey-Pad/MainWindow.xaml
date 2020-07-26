@@ -43,8 +43,7 @@
                     <Button x:Name="btnRemoveCheckedConnections" HorizontalAlignment="Left" VerticalAlignment="Top" Width="109" Margin="436,279,0,0" Height="61" Click="btnRemoveCheckedConnections_Click">
                         <TextBlock TextWrapping="Wrap">Remove Checked Connections</TextBlock>
                     </Button>
-                    <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                    <GroupBox Header="GroupBox" HorizontalAlignment="Left" Height="248" Margin="5,124,0,0" VerticalAlignment="Top" Width="393">
+                    <GroupBox Header="Color Settings" HorizontalAlignment="Left" Height="248" Margin="5,124,0,0" VerticalAlignment="Top" Width="393">
                         <Grid HorizontalAlignment="Left" Height="238" VerticalAlignment="Top" Width="393" Margin="0,0,-12,-13">
                             <TextBox x:Name="tb_windowBackground" HorizontalAlignment="Left" Height="23" Margin="133,10,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.947,0.773" LostFocus="tb_windowBackground_LostFocus"/>
                             <Label Content="Window Background:" HorizontalAlignment="Left" Margin="10,7,0,0" VerticalAlignment="Top"/>

@@ -14,7 +14,7 @@
                 <CheckBox x:Name="cbHotkeyEnable" Content="Enabled" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,18,0,0"/>
             </Grid>
         </GroupBox>
-        <GroupBox Header="Command Execute (Only works with remote connections)&#xA;" HorizontalAlignment="Left" Height="100" Margin="424,180,0,0" VerticalAlignment="Top" Width="317">
+        <GroupBox Header="Command Execute&#xA;" HorizontalAlignment="Left" Height="100" Margin="424,180,0,0" VerticalAlignment="Top" Width="317">
             <Grid HorizontalAlignment="Left" Height="90" Margin="0,-23,-19,-6" VerticalAlignment="Top" Width="322">
                 <TextBox x:Name="tbCmd" HorizontalAlignment="Left" Height="42" Margin="10,38,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="292" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto"/>
                 <CheckBox x:Name="cbCmdEnable" Content="Enabled" HorizontalAlignment="Left" Margin="10,18,0,0" VerticalAlignment="Top"/>
