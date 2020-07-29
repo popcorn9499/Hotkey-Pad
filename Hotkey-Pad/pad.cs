@@ -112,28 +112,26 @@ namespace Hotkey_Pad
                 { //local connection management
                     VirtualKeyCode key = buttonData.HotkeyCombo.KeyToVirtualKey();
                     ModifierKeys modifier = buttonData.HotkeyCombo.modifiers;
-
                     if (modifier.HasFlag(ModifierKeys.Control))
                     {
                         this.kb.Control(key);
                     }
-                    else if (modifier.HasFlag(ModifierKeys.Shift))
+                    if (modifier.HasFlag(ModifierKeys.Shift))
                     {
                         this.kb.Shift(key);
                     }
-                    else if (modifier.HasFlag(ModifierKeys.Alt))
+                    if (modifier.HasFlag(ModifierKeys.Alt))
                     {
                         this.kb.Alt(key);
                     }
-                    else if (modifier.HasFlag(ModifierKeys.Windows))
+                    if (modifier.HasFlag(ModifierKeys.Windows))
                     {
                         this.kb.Window(key);
                     }
-                    else
-                    {
-                        this.kb.Type(key);
-                    }
-                } else
+                    this.kb.TypeDelay(key, new TimeSpan(0, 0, 0,0, 50));
+
+                }
+                else
                 {
                     ConnectionManager connection = ConnectionManager.findConnection(buttonData.Connection);
                     ArrayList payloadList = new ArrayList {"SendKey", buttonData.HotkeyCombo.EvdevKeyModifiers, buttonData.HotkeyCombo.EvdevKey};
